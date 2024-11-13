@@ -387,6 +387,10 @@
     const password = document.querySelector('#password');
     const cPassword = document.querySelector('#cPassword');
 
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("service");
+    console.log(service);
+
 
     document.querySelector('#finish').addEventListener('click', (event) => {
       if (password.value === cPassword.value) {
@@ -414,6 +418,8 @@
         console.log('password mismatch');
       }
     });
+
+
 
   </script>
 

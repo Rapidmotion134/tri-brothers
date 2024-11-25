@@ -344,12 +344,30 @@
 
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");
-    console.log(service);
 
     if (service) {
       const heading = document.getElementById("dynamic-heading");
       heading.textContent = service;
     }
+
+    let services = [];
+    let serviceBought;
+    fetch(`https://api-dev.tribrothersusa.com/services`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then((data) => {
+        services = data;
+        services.forEach((serv) => {
+          if (serv.name === service) {
+            serviceBought = serv;
+          }
+        });
+      })
+      .catch(error => console.error('Error:', error));
 
 
     document.querySelector('#finish').addEventListener('click', (event) => {
@@ -374,13 +392,12 @@
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${data.access_token}`,
                 },
                 body: JSON.stringify({
-                  title: '',
+                  title: service,
                   userId: data.userId,
-                  service: {
-                    name: '',
-                  },
+                  service: serviceBought,
                 })
               })
                 .then(response => response.json())

@@ -251,57 +251,53 @@
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script>
-    const firstName = document.querySelector('#firstName');
-    const lastName = document.querySelector('#lastName');
-    const username = document.querySelector('#username');
-    const phone = document.querySelector('#phone');
-    const email = document.querySelector('#email');
-    const address1 = document.querySelector('#address1');
-    const address2 = document.querySelector('#address2');
-    const city = document.querySelector('#city');
-    const zipCode = document.querySelector('#zipCode');
-    const password = document.querySelector('#password');
-    const cPassword = document.querySelector('#cPassword');
+  document.querySelector('#finish').addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent the default form submission
 
-    const params = new URLSearchParams(window.location.search);
-    const service = params.get("service");
-    console.log(service);
+  if (password.value !== cPassword.value) {
+    alert('Passwords do not match!');
+    return;
+  }
 
-    if (service) {
-      const heading = document.getElementById("dynamic-heading");
-      heading.textContent = service;
-    }
-
-
-    document.querySelector('#finish').addEventListener('click', (event) => {
-      if (password.value === cPassword.value) {
-        if (firstName.value && lastName.value && phone.value && email.value && username.value &&
-          password.value && address1.value && address2.value && city.value && zipCode.value) {
-          fetch('https://api-dev.tribrothersusa.com/auth/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              firstName: firstName.value, lastName: lastName.value, phone: phone.value,
-              email: email.value, username: username.value, password: password.value,
-              address1: address1.value, address2: address2.value, city: city.value,
-              zipcode: zipCode.value
-            })
-          })
-            .then(response => response.json())
-            .then(data => console.log('Success:', data))
-            .catch(error => console.error('Error:', error));
-        } else {
-          console.log('please fill the required fields');
-        }
-      } else {
-        console.log('password mismatch');
+  if (firstName.value && lastName.value && phone.value && email.value && username.value &&
+      password.value && address1.value && address2.value && city.value && zipCode.value) {
+    fetch('https://api-dev.tribrothersusa.com/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        firstName: firstName.value,
+        lastName: lastName.value,
+        phone: phone.value,
+        email: email.value,
+        username: username.value,
+        password: password.value,
+        address1: address1.value,
+        address2: address2.value,
+        city: city.value,
+        zipcode: zipCode.value
+      })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
       }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Success:', data);
+      // Redirect to the success page
+      window.location.href = 'success-reg.html';
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred during registration. Please try again.');
     });
-
-
-
+  } else {
+    alert('Please fill all required fields.');
+  }
+});
   </script>
 
 

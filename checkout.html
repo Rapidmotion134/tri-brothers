@@ -330,6 +330,15 @@
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script>
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+    console.log(service);
+
+    if (service) {
+      const heading = document.getElementById("dynamic-heading");
+      heading.textContent = service;
+    }
+
     const firstName = document.querySelector('#firstName');
     const lastName = document.querySelector('#lastName');
     const username = document.querySelector('#username');
@@ -341,14 +350,6 @@
     const zipCode = document.querySelector('#zipCode');
     const password = document.querySelector('#password');
     const cPassword = document.querySelector('#cPassword');
-
-    const params = new URLSearchParams(window.location.search);
-    const service = params.get("service");
-
-    if (service) {
-      const heading = document.getElementById("dynamic-heading");
-      heading.textContent = service;
-    }
 
     let services = [];
     let serviceBought;
@@ -369,59 +370,77 @@
       })
       .catch(error => console.error('Error:', error));
 
-
     document.querySelector('#finish').addEventListener('click', (event) => {
-      if (password.value === cPassword.value) {
-        if (firstName.value && lastName.value && phone.value && email.value && username.value &&
-          password.value && address1.value && address2.value && city.value && zipCode.value) {
-          fetch('https://api-dev.tribrothersusa.com/auth/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              firstName: firstName.value, lastName: lastName.value, phone: phone.value,
-              email: email.value, username: username.value, password: password.value,
-              address1: address1.value, address2: address2.value, city: city.value,
-              zipcode: zipCode.value
-            })
+      event.preventDefault(); // Prevent default form submission
+
+      // Check password match
+      if (password.value !== cPassword.value) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      // Validate required fields
+      if (firstName.value && lastName.value && username.value && phone.value && email.value &&
+        password.value && address1.value && address2.value && city.value && zipCode.value) {
+
+        // Submit data to API
+        fetch('https://api-dev.tribrothersusa.com/auth/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName: firstName.value,
+            lastName: lastName.value,
+            username: username.value,
+            phone: phone.value,
+            email: email.value,
+            password: password.value,
+            address1: address1.value,
+            address2: address2.value,
+            city: city.value,
+            zipcode: zipCode.value
           })
-            .then(response => response.json())
-            .then((data) => {
-              fetch('https://api-dev.tribrothersusa.com/order', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${data.access_token}`,
-                },
-                body: JSON.stringify({
-                  title: service,
-                  userId: data.userId,
-                  service: serviceBought,
-                })
+        })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            console.log('Success:', data);
+            fetch('https://api-dev.tribrothersusa.com/order', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${data.access_token}`,
+              },
+              body: JSON.stringify({
+                title: serviceBought.name,
+                userId: data.userId,
+                service: serviceBought,
               })
-                .then(response => response.json())
-                .then((data) => {
-                  console.log('Success:', data);
-                  window.location.href = 'https://account-dev.tribrothersusa.com/login' //replace with the proper address
-                })
-                .catch(error => console.error('Error:', error));
             })
-            .catch(error => console.error('Error:', error));
-        } else {
-          console.log('please fill the required fields');
-        }
+              .then(response => response.json())
+              .then((data) => {
+                console.log('Success:', data);
+                // Redirect to the success page
+                window.location.href = 'success-reg.html';
+                // window.location.href = 'https://account-dev.tribrothersusa.com/login' //replace with the proper address
+              })
+              .catch(error => console.error('Error:', error));
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred during registration. Please try again.');
+          });
+
       } else {
-        console.log('password mismatch');
+        alert('Please fill all required fields.');
       }
     });
-
-
-
   </script>
-
-
-
 
 </body>
 

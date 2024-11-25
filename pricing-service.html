@@ -2,76 +2,68 @@
 <html lang="en">
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="box.et">
 
   <title>TriBrothers Freight LLC</title>
 
-  <!-- BootStrap -->
-  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
-
+  <style>
+  .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+  </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm nav-light" id="nav">
+  <nav class="navbar navbar-expand-sm navbar-dark" id="nav">
     <center>
       <div class="container-fluid">
-
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
 
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div class="top-section">
-                <a href="#" class="social-links">
-                  <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#" class="social-links">
-                  <i class="bi bi-twitter"></i>
+                <div class="social-wrapper">
+                  <a href="#" class="social-links">
+                    <i class="bi bi-facebook"></i>
                   </a>
-                <a href="#" class="social-links">
-                  <i class="bi bi-linkedin"></i>
+                  <a href="#" class="social-links">
+                    <i class="bi bi-twitter"></i>
+                    </a>
+                  <a href="#" class="social-links">
+                    <i class="bi bi-linkedin"></i>
+                    </a>
+                  <a href="#" class="social-links">
+                    <i class="bi bi-youtube"></i>
                   </a>
-                <a href="#" class="social-links">
-                  <i class="bi bi-youtube"></i>
-                </a>
-                <a href="#" class="major-button">SIGN UP</a>
-                <a href="#" class="major-button">CLIENT LOGIN</a>
-
-
-                <div class="dropdown lang">
-                  <button class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                    English
-                  </button>
-
-
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item" href="#">Amharic</a></li>
-                    <li><a class="dropdown-item" href="#">Tigrigna</a></li>
-                    <li><a class="dropdown-item" href="#">Afaan Oroomo</a></li>
-                  </ul>
                 </div>
+                <a href="signup.html" class="major-button">SIGN UP</a>
+                <a href="https://account-dev.tribrothersusa.com/" class="major-button">CLIENT LOGIN</a>
+
                 <a href="#" class="join-button">
                   <i class="bi bi-person-circle"></i> Join our Community
-                </a>
+                </a><br><br>
               </div>
 
 
             </div>
+
             <div class="col-lg-8">
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <img src="image/logo.png" class="nav-brand">
-                <ul class="navbar-nav mx-end">
+
+                              <img src="image/logo.png" class="nav-brand">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                   <li class="nav-item">
                       <a href="index.html" class="nav-link ">Home</a>
                   </li>
@@ -112,6 +104,7 @@
   </center>
   </nav>
 
+
   <section id="background-section">
     <div class="container">
       <div class="row justify-content-center">
@@ -131,6 +124,7 @@
       <div class="row justify-content-center">
 
         <div class="col-lg-12">
+
           <center>
             <span class="btn-wrapper">
               <a href="pricing-service.html" id="package-btn">Services</a>
@@ -161,7 +155,7 @@
             <div class="col-lg-6" id="text-container">
               <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
 
-              <a href="#" class="main-btn">Learn More</a>
+
               <br><br><br>
 
               <div class="row">
@@ -195,7 +189,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <a href="checkout.html" id="main-btn">Purchase Now</a>
+                  <a href="checkout.html?service=LLC" id="main-btn">Purchase Now</a>
                 </div>
                 <br>
 
@@ -230,7 +224,6 @@
             <div class="col-lg-6" id="text-container">
               <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
 
-              <a href="#" class="main-btn">Learn More</a>
               <br><br><br>
 
               <div class="row">
@@ -264,7 +257,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <a href="checkout.html" id="main-btn">Purchase Now</a>
+                  <a href="checkout.html?service=BOC3" id="main-btn">Purchase Now</a>
                 </div>
                 <br>
 
@@ -281,7 +274,7 @@
           <div class="row">
 
             <div class="col-lg-12" id="top-container">
-              <div class="row">
+              <div class="row" id="BOC 3">
                 <div class="col-lg-7">
                   <h1 class="header-text">BOC 3</h1>
                 </div>
@@ -298,8 +291,7 @@
             <div class="col-lg-6" id="text-container">
               <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
 
-              <a href="#" class="main-btn">Learn More</a>
-              <br><br><br>
+              <br>
 
               <div class="row">
                 <div class="col-lg-6">
@@ -332,7 +324,7 @@
                 </div>
 
                 <div class="col-lg-6">
-                  <a href="checkout.html" id="main-btn">Purchase Now</a>
+                  <a href="checkout.html?service=BOC3" id="main-btn">Purchase Now</a>
                 </div>
                 <br>
 
@@ -344,6 +336,821 @@
 
           </div>
         </div>
+
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">UCR</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/Kentucky-KYU-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=UCR" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Insurance</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/MC-Number-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Insurance" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Pre-Employment Drug Test</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/Fuel-Taxes-Tractor-Trailer.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Pre-Employment Drug Test" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Authority Certificate</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/UCR-Fee-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Authority Certificate" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Dot PIN Letter</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/IFTA-Tax-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Dot PIN Letter" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">IFTA Filling</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/IFTA-Tax-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=IFTA Filling" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Fuel Card</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/New-Truckers-Tractor-Trailer.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Fuel Card" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">IFTA Certificate</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/Fuel-Taxes-Tractor-Trailer.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=IFTA Certificate" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Safety & Compliance</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/MC-Number-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Safety and Compliance" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Audit</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/2290-Form-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Audit" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">Audit</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/2290-Form-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=Audit" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="col-lg-9" id="general-container">
+          <div class="row">
+
+            <div class="col-lg-12" id="top-container">
+              <div class="row" id="BOC 3">
+                <div class="col-lg-7">
+                  <h1 class="header-text">MCS 150</h1>
+                </div>
+
+                <div class="col-lg-3">
+                  <img src="image/logo.png" class="logo-image">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6" id="image-container">
+              <img src="https://www.truckerspapertrail.com/images/services/IFTA-Tax-Tractor-Trailer-Comp.jpeg" class="main-image">
+            </div>
+            <div class="col-lg-6" id="text-container">
+              <p class="sub-text">Our flagship product, RumbleStrip Professional, is designed for owner-operators who want to grow their businesses. Rest easy knowing that everything from bookkeeping, accounting, taxes, and business planning is handled by a trusted expert.</p>
+
+              <br>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <li class="point-text">Personal Year-End Federal/State Tax Returns</li>
+                  <li class="point-text">Deduction Maximizer</li>
+                  <li class="point-text">Personalized Quarterly Tax Estimates</li>
+                  <li class="point-text">Secure Client Portal</li>
+                  <li class="point-text">Mobile App Document Scanning</li>
+                  <li class="point-text">Bookkeeping</li>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-6">
+                  <li class="point-text">Monthly Profit and Loss Statements</li>
+                  <li class="point-text">Year-to-Date Profit and Loss Statement</li>
+                  <li class="point-text">Detailed Profit Plan</li>
+                  <li class="point-text">Unlimited Tax & Business Consulting</li>
+                  <li class="point-text">Industry Benchmarking</li></div>
+              </div>
+
+              <hr>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <h1 class="price">$50<br></h1>
+                </div>
+
+                <div class="col-lg-6">
+                  <a href="checkout.html?service=MCS 150" id="main-btn">Purchase Now</a>
+                </div>
+                <br>
+
+              </div>
+              <br>
+              <h6 align="center">Pricing may change based on numerous partner discounts available. Contact us to find out if you qualify for a discounted rate!</h6>
+            </div>
+
+
+          </div>
+        </div>
+
+
+
+
       </div>
     </div>
   </section>

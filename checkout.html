@@ -405,7 +405,27 @@
             })
           })
             .then(response => response.json())
-            .then(data => console.log('Success:', data))
+            .then((data) => {
+              fetch('https://api-dev.tribrothersusa.com/order', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                  title: '',
+                  userId: data.userId,
+                  service: {
+                    name: '',
+                  },
+                })
+              })
+                .then(response => response.json())
+                .then((data) => {
+                  console.log('Success:', data);
+                  window.location.href = 'https://account-dev.tribrothersusa.com/login' //replace with the proper address
+                })
+                .catch(error => console.error('Error:', error));
+            })
             .catch(error => console.error('Error:', error));
         } else {
           console.log('please fill the required fields');

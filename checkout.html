@@ -116,7 +116,7 @@
           <h1 class="header-text"><span id="dynamic-heading"></span> REGISTRATION</h1>
           <br>
           <h3 class="main-text">Personal Information</h3>
-          <form action="success-reg.html" method="post">
+          <form action="success-reg.html" method="post" id="payment-form">
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
@@ -163,14 +163,6 @@
                   <label class="top-text">Address Line 1</label>
                   <input type="text" class="form-control shadow-none" name="First Name" id="address1"
                     placeholder="Enter Address Line 1" required>
-                </div>
-              </div>
-
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                  <label class="top-text">Address Line 1</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="address2"
-                    placeholder="Enter Address Line 2" required>
                 </div>
               </div>
 
@@ -240,43 +232,13 @@
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">CARDHOLDER NAME</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
+                  <input type="text" class="form-control shadow-none" name="Card Holder" id="card-holder"
                     placeholder="Enter Cardholder Name" required>
                 </div>
               </div>
-
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                  <label class="top-text">CARD NUMBER</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter Phonenumber" required>
-                </div>
-              </div>
-
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                  <label class="top-text">EXPIRATION DATE</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter Expiration Date" required>
-                </div>
-              </div>
-
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                  <label class="top-text">CVV/CVC (Security Code)</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter CVV Code" required>
-                </div>
-              </div>
-
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                  <label class="top-text">BILLING ADDRESS LINE 1</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter Billing Address" required>
-                </div>
-              </div>
-
+              <label class="top-text">Card details</label>
+              <div id="card-element"></div>
+              <div id="card-errors"></div>
 
             </div>
 
@@ -329,10 +291,16 @@
 
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+
   <script>
+    const stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF"); // Replace with your Stripe Publishable Key
+    const elements = stripe.elements();
+    const card = elements.create("card");
+    card.mount("#card-element");
+
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");
-    console.log(service);
 
     if (service) {
       const heading = document.getElementById("dynamic-heading");
@@ -340,12 +308,12 @@
     }
 
     const firstName = document.querySelector('#firstName');
+    const cardHolder = document.querySelector('#card-holder');
     const lastName = document.querySelector('#lastName');
     const username = document.querySelector('#username');
     const phone = document.querySelector('#phone');
     const email = document.querySelector('#email');
     const address1 = document.querySelector('#address1');
-    const address2 = document.querySelector('#address2');
     const city = document.querySelector('#city');
     const zipCode = document.querySelector('#zipCode');
     const password = document.querySelector('#password');
@@ -353,7 +321,8 @@
 
     let services = [];
     let serviceBought;
-    fetch(`https://api-dev.tribrothersusa.com/services`, {
+    // fetch(`https://api-dev.tribrothersusa.com/services`, {
+    fetch('http://localhost:3000/services', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -370,8 +339,13 @@
       })
       .catch(error => console.error('Error:', error));
 
-    document.querySelector('#finish').addEventListener('click', (event) => {
+    document.querySelector('#finish').addEventListener('click', async (event) => {
       event.preventDefault(); // Prevent default form submission
+
+      const { paymentMethod, error } = await stripe.createPaymentMethod({
+        type: "card",
+        card: card
+      });
 
       // Check password match
       if (password.value !== cPassword.value) {
@@ -381,61 +355,82 @@
 
       // Validate required fields
       if (firstName.value && lastName.value && username.value && phone.value && email.value &&
-        password.value && address1.value && address2.value && city.value && zipCode.value) {
+        password.value && address1.value && city.value && zipCode.value) {
 
-        // Submit data to API
-        fetch('https://api-dev.tribrothersusa.com/auth/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            firstName: firstName.value,
-            lastName: lastName.value,
-            username: username.value,
-            phone: phone.value,
-            email: email.value,
-            password: password.value,
-            address1: address1.value,
-            address2: address2.value,
-            city: city.value,
-            zipcode: zipCode.value
-          })
-        })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            console.log('Success:', data);
-            fetch('https://api-dev.tribrothersusa.com/order', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${data.access_token}`,
-              },
-              body: JSON.stringify({
-                title: serviceBought.name,
-                userId: data.userId,
-                service: serviceBought,
-              })
+        if (error) {
+          document.getElementById("card-errors").textContent = error.message;
+        } else {
+          // fetch('https://api-dev.tribrothersusa.com/auth/register', {
+          fetch('http://localhost:3000/auth/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              firstName: firstName.value,
+              lastName: lastName.value,
+              username: username.value,
+              phone: phone.value,
+              email: email.value,
+              password: password.value,
+              address1: address1.value,
+              city: city.value,
+              zipcode: zipCode.value
             })
-              .then(response => response.json())
-              .then((data) => {
-                console.log('Success:', data);
-                // Redirect to the success page
-                window.location.href = 'success-reg.html';
-                // window.location.href = 'https://account-dev.tribrothersusa.com/login' //replace with the proper address
-              })
-              .catch(error => console.error('Error:', error));
           })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred during registration. Please try again.');
-          });
-
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then((data) => {
+              // fetch('https://api-dev.tribrothersusa.com/order', {
+              fetch('http://localhost:3000/order', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${data.access_token}`,
+                },
+                body: JSON.stringify({
+                  title: serviceBought.name,
+                  userId: data.userId,
+                  service: serviceBought,
+                })
+              })
+                .then((response) => {
+                  if (response.ok) {
+                    return response.json();
+                  } else {
+                    throw new Error();
+                  }
+                })
+                .then((data) => {
+                  stripe.confirmCardPayment(data.client_secret, {
+                    payment_method: {
+                      card: card,
+                      billing_details: {
+                        name: cardHolder.value,
+                      },
+                    }
+                  })
+                    .then((result) => {
+                      if (result.error) {
+                        console.error(result.error);
+                      } else {
+                        window.location.href = 'success-reg.html';
+                      }
+                    });
+                  //todo: after the success page redirect to management console 
+                  // window.location.href = 'https://account-dev.tribrothersusa.com/login' //replace with the proper address
+                })
+                .catch(error => console.error('Error:', error));
+            })
+            .catch(error => {
+              console.error('Error:', error);
+              alert('An error occurred during registration. Please try again.');
+            });
+        }
       } else {
         alert('Please fill all required fields.');
       }

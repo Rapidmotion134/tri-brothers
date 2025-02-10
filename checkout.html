@@ -60,7 +60,7 @@
 
           <div class="col-lg-8">
 
-            <img src="image/logo.png" class="nav-brand">
+            <img src="image/logo.png" class="nav-brand" alt="logo">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -321,8 +321,8 @@
 
     let services = [];
     let serviceBought;
-    // fetch(`https://api-dev.tribrothersusa.com/services`, {
-    fetch('http://localhost:3000/services', {
+    fetch(`https://api-dev.tribrothersusa.com/services`, {
+      // fetch('http://localhost:3000/services', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -360,8 +360,8 @@
         if (error) {
           document.getElementById("card-errors").textContent = error.message;
         } else {
-          // fetch('https://api-dev.tribrothersusa.com/auth/register', {
-          fetch('http://localhost:3000/auth/register', {
+          fetch('https://api-dev.tribrothersusa.com/auth/register', {
+            // fetch('http://localhost:3000/auth/register', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -385,8 +385,8 @@
               return response.json();
             })
             .then((data) => {
-              // fetch('https://api-dev.tribrothersusa.com/order', {
-              fetch('http://localhost:3000/order', {
+              fetch('https://api-dev.tribrothersusa.com/order', {
+                // fetch('http://localhost:3000/order', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

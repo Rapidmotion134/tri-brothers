@@ -16,6 +16,121 @@ body {
   font-weight: 400!important;
   background-color: var(--primary);
 }
+/* Style the card number input label */
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #32325d;
+  text-transform: capitalize;
+}
+
+/* Style the card number input */
+#card-number {
+  width: 100%;
+  background: #FFF;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+/* Add hover and focus effects for card number */
+#card-number:hover,
+#card-number:focus-within {
+  border-color: #007bff;
+  box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Style the MM/YY input */
+#card-expiry {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  background: #FFF;
+  margin-bottom: 50px;
+}
+
+/* Style the CVC input */
+#card-cvc {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  background: #FFF;
+  margin-bottom: 50px;
+}
+
+/* Add hover and focus effects for MM/YY and CVC */
+#card-expiry:hover,
+#card-expiry:focus-within,
+#card-cvc:hover,
+#card-cvc:focus-within {
+  border-color: #007bff;
+  box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.3);
+  transform: scale(1.02);
+}
+
+/* Style the form container */
+.payment-form {
+  max-width: 400px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Style the submit button */
+#submit-button {
+  width: 100%;
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button hover effect */
+#submit-button:hover {
+  background: linear-gradient(135deg, #0056b3 0%, #003f80 100%);
+  box-shadow: 0px 4px 15px rgba(0, 91, 187, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Add disabled state for button */
+#submit-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Style for input group */
+.payment-form .input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* Add some space between MM/YY and CVC inputs */
+.payment-form .input-group input {
+  width: 48%;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .payment-form {
+    width: 90%;
+  }
+}
 
 .navbar-dark{
   background: #000;
@@ -60,6 +175,10 @@ body {
   padding-left: 30px;
 }
 
+.InputContainer{
+  background: red!important;
+}
+
 .nav-item .dropdown-menu .exception{
   border-bottom: 1px solid transparent;
 }
@@ -92,7 +211,12 @@ body {
 }
 
 .navbar-dark .nav-brand{
-  width:200px;
+  width:350px;
+}
+
+.navbar-dark #bar-container{
+  margin-top:auto;
+  margin-bottom: auto;
 }
 
 .navbar-dark .join-button{
@@ -122,7 +246,7 @@ body {
 
 
 #header #background-container{
-  background: url('../image/header-background.jpg');
+  background: url('../image/marcin-jozwiak-kGoPcmpPT7c-unsplash.jpg');
   background-position: center;
   background-repeat: no-repeat;
   height: 70vh;
@@ -130,13 +254,14 @@ body {
 }
 
 #header #wrapper-opacity{
-  background: rgba(0,0,0,0.6);
+  background: rgba(14, 26, 4, 0.8);
   width:100%;
   height: 100%;
+  padding-left: 100px;
 }
 
 #header #background-container .header-text{
-  font-size:50px;
+  font-size:75px;
   padding-top:100px;
   width:100%;
   font-family: Oswald;
@@ -146,7 +271,8 @@ body {
 
 #header #background-container .sub-text{
   color:#FFF;
-  width:50%;
+  font-size:17px;
+  width:80%;
 }
 
 #header #background-container .main-btn{
@@ -156,29 +282,36 @@ body {
   text-decoration: none;
   color:#FFF;
   background:#66c010;
-  font-size:20px;
-  border-radius: 20px;
-  border:2px solid #365e0f;
+  font-size:17px;
+}
+
+#semi-header{
 }
 
 #semi-header #background-container{
   background: #f0f0f0;
   min-height: 30vh;
-  padding:40px;
+  padding:100px;
 }
 
 #semi-header #main-container{
-  padding:50px;
+  padding:25px;
+  background: #FFF;
+  border-left: 10px solid #f0f0f0;
+  border-right:10px solid #f0f0f0;
 }
 
-
-#semi-header #main-container .header{
+#semi-header .header{
+  font-size:50px;
+  font-family: Oswald;
+  text-transform: uppercase;
   color:#66c010;
+  width:60%;
 }
 
 #semi-header #main-container .main-text{
   font-size: 20px;
-  color:#66c010;
+  color:#000000;
   font-family: Oswald;
   font-weight: bold;
 }
@@ -189,9 +322,11 @@ body {
   display:block;
 }
 
-#semi-header #background-container .header{
-  font-family: Oswald;
-  color:#66c010;
+#semi-header #main-container .icon-image{
+  height: 60px;
+  max-height: 50px;
+  margin-bottom: 25px;
+  margin-top:10px;
 }
 
 #semi-header #background-container .sub-text{
@@ -201,43 +336,58 @@ body {
 }
 
 #portal-intro{
-  background: #365e0f;
-  padding:50px;
-  min-height: 30vh;
-}
-
-#portal-intro .main-btn{
-  padding:15px;
-  padding-left: 30px;
-  padding-right:30px;
-  text-decoration: none;
-  color:#000;
-  background: #FFF;
-  border-radius: 10px;
-}
-
-#portal-intro #text-container{
-  margin-top:auto;
-  margin-bottom: auto;
-
-}
-
-#portal-intro .main-text{
-  margin-top:10px;
-  color:#FFF;
-  font-weight: bold;
-  font-family: Oswald;
-}
-
-#portal-intro .sub-text{
-  color:#FFF;
-  font-size:20px;
-  font-weight: normal;
-  font-family: Oswald;
+  background: #f0f0f0;
 }
 
 #portal-intro .main-image{
   width:100%;
+  padding:100px;
+  object-fit: cover;
+}
+
+#portal-intro #text-container{
+  margin-top:auto;
+  margin-bottom:auto;
+  padding:100px;
+}
+
+#portal-intro .header-text{
+  font-size:60px;
+  font-weight: 600;
+  font-family: Oswald;
+  margin:0px;
+  padding:0px;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+#portal-intro .mini-text{
+  font-size:15px;
+  margin:0px;
+}
+
+#portal-intro .main-text{
+  font-size:35px;
+  font-weight: bolder;
+}
+
+#portal-intro .sub-text{
+  width:90%;
+  font-size: 17px;
+  color:#556375;
+  margin-bottom: 30px;
+}
+
+#portal-intro .main-btn{
+  padding:15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background: #365e0f;
+  margin-top:20px;
+  color:#FFF;
+  text-decoration: none;
+  font-family: Oswald;
+  font-weight: 600;
 }
 
 #background-section{
@@ -310,74 +460,53 @@ body {
   padding:20px;
 }
 
-
 #semi-structure{
-  min-height: 75vh;
-  padding:0px;
+}
+
+#semi-structure .main-image{
+  width:100%;
+  height: 600px;
+  object-fit: cover;
 }
 
 #semi-structure #text-container{
-  padding:35px;
+  padding:50px;
   margin-top:auto;
-  margin-bottom: auto;
+  margin-bottom:auto;
 }
 
-#semi-structure #text-container .header-text{
-  font-family: Oswald;
+#semi-structure .header-text{
+  font-size:60px;
   font-weight: 600;
-  text-decoration: underline;
-  margin-bottom: 30px;
-}
-
-#semi-structure #text-container .sub-text{
-  width:80%;
-}
-
-#semi-structure #text-container .sub-text-right{
-  width:80%;
-  float:right;
-}
-
-#semi-structure #text-container .sub-text-left{
-  width:70%;
-  float:left;
-}
-
-#semi-structure #image-container{
- padding:0px;
-}
-
-#semi-structure #image-container .main-image{
-  width:100%;
-  height: 75vh;
+  font-family: Oswald;
+  margin:0px;
   padding:0px;
-  object-fit:cover;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+#semi-structure .mini-text{
+  font-size:15px;
+  margin:0px;
+}
+
+#semi-structure .sub-text{
+  width:90%;
+  font-size: 18px;
+  color:#556375;
+  margin-bottom: 30px;
 }
 
 #semi-structure .main-btn{
   padding:15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  float:right;
-  background: #66c010;
+  padding-left: 60px;
+  padding-right: 60px;
+  background: #365e0f;
+  margin-top:20px;
   color:#FFF;
   text-decoration: none;
-  border-radius: 10px;
-  text-transform: uppercase;
   font-family: Oswald;
-}
-
-#semi-structure .main-btn-left{
-  padding:15px;
-  padding-left: 50px;
-  padding-right: 50px;
-  float:left;
-  background: #66c010;
-  color:#FFF;
-  text-decoration: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-family: Oswald;
+  font-weight: 600;
 }
 
 #intersection{
@@ -390,6 +519,7 @@ body {
 #intersection .header-text{
   font-family: Oswald;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
 #intersection .main-btn{
@@ -399,7 +529,14 @@ body {
   background:#66c010;
   color:#FFF;
   text-decoration:none;
+}
 
+#intersection .header-text{
+  font-size:50px;
+}
+
+#intersection .sub-text{
+  font-size:17px;
 }
 
 #services {
@@ -444,7 +581,6 @@ body {
 #team .main-image{
   width:100%;
   height: 300px;
-  object-fit: cover;
 }
 
 #team .header-text{
@@ -690,6 +826,7 @@ body {
 
 #faq .accordion-button {
     background-color: transparent;
+    font-size:15px;
 }
 
 /* Remove the border and outline */
@@ -799,27 +936,23 @@ body {
 }
 
 #video-container .header-text{
-  font-size: 45px;
-  font-family: Oswald;
-  margin-top:70px;
+
 }
 
 #video-container .sub-text{
 
 }
 
-#video-container .video-container{
-  margin-top:100px;
-  margin-bottom: 100px;
+#contact-top{
 }
 
-#contact-top{
-  background:#747474;
-  height: 100vh;
+#contact-top #padding-main{
+  padding-top:100px;
 }
 
 #contact-top #main-container{
-  padding:100px;
+  padding:30px;
+  background: #000;
 }
 
 #contact-top #main-container .header-text{
@@ -828,9 +961,13 @@ body {
   font-size: 45px;
 }
 
+#contact-top #main-container .sub-text{
+  font-size:18px;
+  color:#FFF;
+}
+
 #contact-top #general-container{
   padding:100px;
-  height: 100vh;
   background: #000;
 }
 
@@ -843,23 +980,20 @@ body {
 #contact-top #general-container #inner .header-text{
   font-size:25px;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
 #contact-top #form-container{
-  background:#0e1a04;
+  background:#f0f0f0;
   padding:50px;
   color:#FFF;
-  height: 100vh;
 }
 
 #contact-top #form-container .form-group{
   margin-bottom: 20px;
 }
 
-#contact-top #form-container .form-control{
-  border-radius: 0px;
-  margin-top:10px;
+#contact-top #form-container .sub-texted{
+  color:#000;
 }
 
 #contact-top #form-container .main-btn-2{
@@ -873,14 +1007,31 @@ body {
   border-radius: 10px;
 }
 
+#contact-top .main-image{
+  width:300px;
+  margin-top:50px;
+}
+
 #contact-bottom{
   padding:100px;
+  background: #f0f0f0;
+}
+
+#contact-bottom #main-box{
+  background: #FFF;
+  padding:50px;
+  border-left: 20px solid #f0f0f0;
+  border-right: 20px solid #f0f0f0;
 }
 
 #contact-bottom .header-text{
-  font-size:30px;
+  font-size:25px;
   font-family: Oswald;
-  text-decoration:underline;
+  margin-top:10px;
+}
+
+#contact-bottom #main-icon{
+  font-size:35px;
 }
 
 #success-container{
@@ -916,37 +1067,62 @@ body {
   border-radius: 20px;
 }
 
-#about-primary .header-text{
-  font-size:30px;
-  font-family: Oswald;
-  text-decoration:underline;
-  margin-right: 50px;
+#about-primary{
 }
 
-#about-primary .sub-text{
-  width:75%;
-  float:right;
-  margin-right: 50px;
-}
-
-#about-primary #text-container{
-  padding:0px;
-  margin-top:auto;
-  margin-bottom: auto;
-}
-
-#abour-primary #image-container{
-  padding:0px;
-}
-
-#about-primary #image-container .main-image{
+#about-primary .main-image{
   width:100%;
-  height: 450px;
+  height: 600px;
   object-fit: cover;
 }
 
-#about-primary #image-container{
+#about-primary #text-container{
+  padding:50px;
+  margin-top:auto;
+  margin-bottom:auto;
+}
+
+#about-primary .header-text{
+  font-size:60px;
+  font-weight: 600;
+  font-family: Oswald;
+  margin:0px;
   padding:0px;
+  margin-top:15px;
+  margin-bottom: 15px;
+}
+
+#about-primary .mini-text{
+  font-size:15px;
+  margin:0px;
+}
+
+#about-primary .sub-text{
+  width:90%;
+  font-size: 16px;
+  color:#556375;
+  margin-bottom: 30px;
+}
+
+#about-primary .main-btn{
+  padding:15px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background: #365e0f;
+  margin-top:20px;
+  color:#FFF;
+  text-decoration: none;
+  font-family: Oswald;
+  font-weight: 600;
+}
+
+#about-primary .bold{
+  font-weight: bold;
+  font-family: Oswald;
+}
+
+#about-primry .bullet-text{
+  width:70%;
 }
 
 #about-secondary{
@@ -965,6 +1141,8 @@ body {
   float:left;
   margin-left: 50px;
 }
+
+
 
 #about-secondary #image-container{
   padding:0px;
@@ -1001,7 +1179,6 @@ body {
 #footer{
   background: #050505;
   color:#FFF!important;
-  height: 200px;
   padding:35px;
 }
 
@@ -1032,13 +1209,7 @@ body {
   color:#FFF;
   text-transform: uppercase;
   font-size: 10px;
-  margin-top:70px;
-  margin-top:50px;
-  margin-left: 30px;
-  margin-right:30px;
-}
-
-#footer .link-container{
+  display: block;
   margin-top:70px;
 }
 
@@ -1050,31 +1221,14 @@ body {
   text-transform: uppercase;
 }
 
-#main-paragraph{
-  background: #000;
-  min-height: 100vh;
-  padding:100px;
+#footer .link-container{
+
 }
 
-#main-paragraph .header-text{
-  color:#FFF;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size:30px;
-  font-family: Oswald;
-}
-
-#main-paragraph .sub-text{
-  width:80%;
-  color:#c2bcbc;
-}
-
-#main-paragraph .bold{
-  font-weight: bold;
-}
-
-#main-paragraph .list-items{
-  color:#c2bcbc;
+#footer .link-container .main-link{
+  float:left;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 
@@ -1181,10 +1335,6 @@ body {
     width:100px!important;
     height: inherit!important;
     float:right;
-  }
-
-  #horizontal-image{
-    padding:20px;
   }
 
   #contact-top{

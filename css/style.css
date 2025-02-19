@@ -244,7 +244,6 @@ label {
   padding-right: 17px;
 }
 
-
 #header #background-container{
   background: url('../image/marcin-jozwiak-kGoPcmpPT7c-unsplash.jpg');
   background-position: center;
@@ -458,6 +457,39 @@ label {
 #horizontal-image .main-image{
   width:100%;
   padding:20px;
+}
+
+#purchasing{
+  padding:80px;
+  padding-top:30px;
+  background: #000;
+  color:#FFF;
+}
+
+#purchasing .main-image{
+  width:70%;
+}
+
+#purchasing .header-text{
+  font-family: Oswald;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+#purchasing .main-text{
+  font-size: 20px;
+  margin-top:10px;
+  font-weight: bold;
+}
+
+#purchasing .icon-one{
+  height: 60px;
+  width: 60px;
+}
+
+#purchasing .simple-link{
+  text-decoration: none;
+  color:#66c010;
 }
 
 #semi-structure{
@@ -1354,5 +1386,15 @@ label {
   }
 
 
+  #purchasing{
+    padding:10px;
+  }
 
+  #purchasing .main-image{
+    width:100%;
+  }
+
+  #purchasing .icon-one{
+    margin-top:15px;
+  }
 }

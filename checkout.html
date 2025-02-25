@@ -30,64 +30,57 @@
     <center>
       <div class="container-fluid">
 
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <div class="top-section">
-              <div class="social-wrapper">
-                <a href="#" class="social-links">
-                  <i class="bi bi-facebook"></i>
-                </a>
-                <a href="#" class="social-links">
-                  <i class="bi bi-twitter"></i>
-                </a>
-                <a href="#" class="social-links">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="#" class="social-links">
-                  <i class="bi bi-youtube"></i>
-                </a>
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="top-section">
+                <div class="social-wrapper">
+                  <a href="https://facebook.com/tribrothersusa/" class="social-links">
+                    <i class="bi bi-facebook"></i>
+                  </a>
+                  <a href="https://www.instagram.com/tribrothersusa/" class="social-links">
+                    <i class="bi bi-instagram"></i>
+                  </a>
+                </div>
+                <a href="signup.html" class="major-button">SIGN UP</a>
+                <a href="https://account-dev.tribrothersusa.com/" class="major-button" target=”_blank”>CLIENT LOGIN</a>
+
+                <a href="#" class="join-button">
+                  <i class="bi bi-person-circle"></i> Join our Community
+                </a><br><br>
               </div>
-              <a href="signup.html" class="major-button">SIGN UP</a>
-              <a href="https://account-dev.tribrothersusa.com/" class="major-button" target=”_blank”>CLIENT LOGIN</a>
 
-              <a href="#" class="join-button">
-                <i class="bi bi-person-circle"></i> Join our Community
-              </a><br><br>
+
             </div>
 
-
-          </div>
-
-          <div class="col-lg-8">
-
-            <img src="image/logo.png" class="nav-brand" alt="logo">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="col-lg-8">
+              <img src="image/logo.png" class="nav-brand">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-                  <a href="index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a href="services.html" class="nav-link">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a href="about.html" class="nav-link">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="faq.html" class="nav-link">FAQ</a>
-                </li>
-                <li class="nav-item">
-                  <a href="contact.html" class="nav-link">Contact</a>
-                </li>
-              </ul>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                      <a href="index.html" class="nav-link">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="services.html" class="nav-link">Services</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="about.html" class="nav-link">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="faq.html" class="nav-link">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="contact.html" class="nav-link">Contact</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </center>
+    </div>
+  </center>
   </nav>
 
 
@@ -118,7 +111,7 @@
 
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
-                  <label class="top-text">USERNAME</label>
+                  <label class="top-text">Username</label>
                   <input type="text" class="form-control shadow-none" name="userame" id="username"
                     placeholder="Enter username" required>
                 </div>
@@ -142,9 +135,9 @@
 
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
-                  <label class="top-text">Address Line</label>
+                  <label class="top-text">Address</label>
                   <input type="text" class="form-control shadow-none" name="First Name" id="address1"
-                    placeholder="Enter Address Line" required>
+                    placeholder="Enter Address" required>
                 </div>
               </div>
 
@@ -165,39 +158,27 @@
               </div>
 
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group position-relative">
+                <div class="form-group">
                   <label class="top-text">Password</label>
-                  <div class="input-group">
-                    <input type="password" class="form-control shadow-none" id="password" placeholder="Enter Password" required>
-                    <button class="toggle-password" type="button" onclick="togglePassword('password', 'togglePasswordIcon1')">
-                      <i id="togglePasswordIcon1" class="bi bi-eye"></i>
-                    </button>
-                  </div>
+                  <input type="password" class="form-control shadow-none" name="First Name" id="password"
+                    placeholder="Enter Password" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group position-relative">
+                <div class="form-group">
                   <label class="top-text">Confirm Password</label>
-                  <div class="input-group">
-                    <input type="password" class="form-control shadow-none" id="cPassword" placeholder="Enter Password" required>
-                    <button class="toggle-password" type="button" onclick="togglePassword('cPassword', 'togglePasswordIcon2')">
-                      <i id="togglePasswordIcon2" class="bi bi-eye"></i>
-                    </button>
-                  </div>
+                  <input type="password" class="form-control shadow-none" name="First Name" id="cPassword"
+                    placeholder="Enter Password" required>
                 </div>
               </div>
-
             </div>
-
             <br><br>
-
             <h3 class="main-text">DOCUMENT INFORMATION</h3>
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">UCR NUMBER</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="ucr"
+                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
                     placeholder="Enter UCR Number" required>
                 </div>
               </div>
@@ -205,7 +186,7 @@
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">TAX ID</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="tax-id"
+                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
                     placeholder="Enter TAXID" required>
                 </div>
               </div>
@@ -213,14 +194,14 @@
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">TIN</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="tin" placeholder="Enter TIN"
-                    required>
+                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
+                    placeholder="Enter TIN" required>
                 </div>
               </div>
             </div>
 
-            <br><br>
 
+            <br><br>
             <h3 class="main-text">PAYMENT INFORMATION</h3>
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -231,24 +212,8 @@
                 </div>
               </div>
               <label class="top-text">Card details</label>
-              <div id="card-container">
-              <div class="card-field">
-                <label>Card Number</label>
-                <div id="card-number"></div>
-              </div>
-
-              <div class="card-field">
-                <label>Expiry Date</label>
-                <div id="card-expiry"></div>
-              </div>
-
-              <div class="card-field">
-                <label>CVC</label>
-                <div id="card-cvc"></div>
-              </div>
-            </div>
-
-            <div id="card-errors" role="alert"></div>
+              <div id="card-element"></div>
+              <div id="card-errors"></div>
 
             </div>
 
@@ -270,27 +235,23 @@
           <p class="sub-text">Tel: (469) 908-1110</p>
           <p class="sub-text">info@tribrothersusa.com</p>
           <p class="sub-text">5125 W Oquendo Rd, Ste 8,<br> Las Vegas, NV 89118</p><br>
-          <p class="sub-text">&copy 2024 Tri Brothers LLC</p>
+          <p class="sub-text">&copy 2025 Tri Brothers LLC</p>
         </div>
 
         <div class="col-lg-3">
           <center>
-            <a href="#" class="social-icons">
+            <a href="https://facebook.com/tribrothersusa/" class="social-icons">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="#" class="social-icons">
-              <i class="bi bi-twitter"></i>
-            </a>
-            <a href="#" class="social-icons">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="#" class="social-icons">
-              <i class="bi bi-youtube"></i>
-            </a>
+            <a href="https://www.instagram.com/tribrothersusa/?hl=en" class="social-icons">
+              <i class="bi bi-instagram"></i>
+              </a>
             <br>
             <div class="link-container">
-              <a href="terms.html" class="main-link">Terms and conditions</a>
-              <a href="privacy.html" class="main-link">Privacy Policy</a>
+              <center>
+                <a href="terms.html" class="main-link">Terms and conditions</a>
+                <a href="privacy.html" class="main-link">Privacy Policy</a>
+              </center>
             </div>
           </center>
         </div>
@@ -306,58 +267,10 @@
   <script src="https://js.stripe.com/v3/"></script>
 
   <script>
-
-  function togglePassword(inputId, iconId) {
-      const input = document.getElementById(inputId);
-      const icon = document.getElementById(iconId);
-
-      if (input.type === "password") {
-        input.type = "text";
-        icon.classList.replace("bi-eye", "bi-eye-slash");
-      } else {
-        input.type = "password";
-        icon.classList.replace("bi-eye-slash", "bi-eye");
-      }
-    }
-  const stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF");
-   const elements = stripe.elements();
-
-   const cardNumber = elements.create("cardNumber", {
-     style: { base: { fontSize: "16px", color: "#333" }, invalid: { color: "#e74c3c" } }
-   });
-
-   const cardExpiry = elements.create("cardExpiry", {
-     style: { base: { fontSize: "16px", color: "#333" }, invalid: { color: "#e74c3c" } }
-   });
-
-   const cardCvc = elements.create("cardCvc", {
-     style: { base: { fontSize: "16px", color: "#333" }, invalid: { color: "#e74c3c" } }
-   });
-
-   cardNumber.mount("#card-number");
-   cardExpiry.mount("#card-expiry");
-   cardCvc.mount("#card-cvc");
-
-   cardNumber.on("change", function(event) {
-   const displayError = document.getElementById("card-errors");
-   displayError.textContent = event.error ? event.error.message : "";
-
-   // Card brand detection
-   const cardBrand = event.brand;
-   const brandElement = document.getElementById("card-brand");
-   const brandLogos = {
-     visa: "https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png",
-     mastercard: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
-     amex: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg",
-     discover: "https://upload.wikimedia.org/wikipedia/commons/5/52/Discover_Card_logo.svg",
-     diners: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Diners_Club_Logo7.svg",
-     jcb: "https://upload.wikimedia.org/wikipedia/commons/0/0d/JCB_logo.svg",
-     unionpay: "https://upload.wikimedia.org/wikipedia/commons/b/bd/UnionPay_logo.svg",
-     unknown: ""
-   };
-
-     brandElement.style.backgroundImage = `url(${brandLogos[cardBrand] || ""})`;
-   });
+    const stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF"); // Replace with your Stripe Publishable Key
+    const elements = stripe.elements();
+    const card = elements.create("card");
+    card.mount("#card-element");
 
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");

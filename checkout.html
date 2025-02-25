@@ -118,7 +118,7 @@
 
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
-                  <label class="top-text">Username</label>
+                  <label class="top-text">USERNAME</label>
                   <input type="text" class="form-control shadow-none" name="userame" id="username"
                     placeholder="Enter username" required>
                 </div>
@@ -165,21 +165,33 @@
               </div>
 
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
+                <div class="form-group position-relative">
                   <label class="top-text">Password</label>
-                  <input type="password" class="form-control shadow-none" name="First Name" id="password"
-                    placeholder="Enter Password" required>
+                  <div class="input-group">
+                    <input type="password" class="form-control shadow-none" id="password" placeholder="Enter Password" required>
+                    <button class="toggle-password" type="button" onclick="togglePassword('password', 'togglePasswordIcon1')">
+                      <i id="togglePasswordIcon1" class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
+
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
+                <div class="form-group position-relative">
                   <label class="top-text">Confirm Password</label>
-                  <input type="password" class="form-control shadow-none" name="First Name" id="cPassword"
-                    placeholder="Enter Password" required>
+                  <div class="input-group">
+                    <input type="password" class="form-control shadow-none" id="cPassword" placeholder="Enter Password" required>
+                    <button class="toggle-password" type="button" onclick="togglePassword('cPassword', 'togglePasswordIcon2')">
+                      <i id="togglePasswordIcon2" class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
+
             </div>
+
             <br><br>
+
             <h3 class="main-text">DOCUMENT INFORMATION</h3>
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -207,8 +219,8 @@
               </div>
             </div>
 
-
             <br><br>
+
             <h3 class="main-text">PAYMENT INFORMATION</h3>
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -219,8 +231,24 @@
                 </div>
               </div>
               <label class="top-text">Card details</label>
-              <div id="card-element"></div>
-              <div id="card-errors"></div>
+              <div id="card-container">
+              <div class="card-field">
+                <label>Card Number</label>
+                <div id="card-number"></div>
+              </div>
+
+              <div class="card-field">
+                <label>Expiry Date</label>
+                <div id="card-expiry"></div>
+              </div>
+
+              <div class="card-field">
+                <label>CVC</label>
+                <div id="card-cvc"></div>
+              </div>
+            </div>
+
+            <div id="card-errors" role="alert"></div>
 
             </div>
 
@@ -278,10 +306,58 @@
   <script src="https://js.stripe.com/v3/"></script>
 
   <script>
-    const stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF"); // Replace with your Stripe Publishable Key
-    const elements = stripe.elements();
-    const card = elements.create("card");
-    card.mount("#card-element");
+
+  function togglePassword(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("bi-eye", "bi-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.replace("bi-eye-slash", "bi-eye");
+      }
+    }
+  const stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF");
+   const elements = stripe.elements();
+
+   const cardNumber = elements.create("cardNumber", {
+     style: { base: { fontSize: "16px", color: "#333" }, invalid: { color: "#e74c3c" } }
+   });
+
+   const cardExpiry = elements.create("cardExpiry", {
+     style: { base: { fontSize: "16px", color: "#333" }, invalid: { color: "#e74c3c" } }
+   });
+
+   const cardCvc = elements.create("cardCvc", {
+     style: { base: { fontSize: "16px", color: "#333" }, invalid: { color: "#e74c3c" } }
+   });
+
+   cardNumber.mount("#card-number");
+   cardExpiry.mount("#card-expiry");
+   cardCvc.mount("#card-cvc");
+
+   cardNumber.on("change", function(event) {
+   const displayError = document.getElementById("card-errors");
+   displayError.textContent = event.error ? event.error.message : "";
+
+   // Card brand detection
+   const cardBrand = event.brand;
+   const brandElement = document.getElementById("card-brand");
+   const brandLogos = {
+     visa: "https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png",
+     mastercard: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg",
+     amex: "https://upload.wikimedia.org/wikipedia/commons/3/30/American_Express_logo.svg",
+     discover: "https://upload.wikimedia.org/wikipedia/commons/5/52/Discover_Card_logo.svg",
+     diners: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Diners_Club_Logo7.svg",
+     jcb: "https://upload.wikimedia.org/wikipedia/commons/0/0d/JCB_logo.svg",
+     unionpay: "https://upload.wikimedia.org/wikipedia/commons/b/bd/UnionPay_logo.svg",
+     unknown: ""
+   };
+
+     brandElement.style.backgroundImage = `url(${brandLogos[cardBrand] || ""})`;
+   });
 
     const params = new URLSearchParams(window.location.search);
     const service = params.get("service");

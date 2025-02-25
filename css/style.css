@@ -9,126 +9,73 @@
   --sixth:#1d2443;
 }
 
-
-body {
-  font-family: Lato!important;
-  color: var(--secondary);
-  font-weight: 400!important;
-  background-color: var(--primary);
-}
-/* Style the card number input label */
-label {
-  display: block;
-  font-size: 14px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #32325d;
-  text-transform: capitalize;
+.position-relative {
+  position: relative;
 }
 
-/* Style the card number input */
-#card-number {
-  width: 100%;
-  background: #FFF;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 30px;
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  border:0px;
+  background: transparent;
+  transform: translateY(-50%);
+  z-index: 2; /* Ensure the icon stays on top of the input */
 }
 
-/* Add hover and focus effects for card number */
-#card-number:hover,
-#card-number:focus-within {
-  border-color: #007bff;
-  box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.3);
-  transform: scale(1.02);
+.toggle-password i {
+  font-size: 18px;
+  color: #000;
 }
 
-/* Style the MM/YY input */
-#card-expiry {
-  width: 100%;
-  border-radius: 5px;
-  padding: 10px;
-  background: #FFF;
-  margin-bottom: 50px;
-}
-
-/* Style the CVC input */
-#card-cvc {
-  width: 100%;
-  border-radius: 5px;
-  padding: 10px;
-  background: #FFF;
-  margin-bottom: 50px;
-}
-
-/* Add hover and focus effects for MM/YY and CVC */
-#card-expiry:hover,
-#card-expiry:focus-within,
-#card-cvc:hover,
-#card-cvc:focus-within {
-  border-color: #007bff;
-  box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.3);
-  transform: scale(1.02);
-}
-
-/* Style the form container */
-.payment-form {
-  max-width: 400px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Style the submit button */
-#submit-button {
-  width: 100%;
-  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Button hover effect */
-#submit-button:hover {
-  background: linear-gradient(135deg, #0056b3 0%, #003f80 100%);
-  box-shadow: 0px 4px 15px rgba(0, 91, 187, 0.3);
-  transform: translateY(-2px);
-}
-
-/* Add disabled state for button */
-#submit-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-  box-shadow: none;
-}
-
-/* Style for input group */
-.payment-form .input-group {
+#card-container {
   display: flex;
+  gap: 15px;
+  max-width: 750px;
+  align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
 }
 
-/* Add some space between MM/YY and CVC inputs */
-.payment-form .input-group input {
-  width: 48%;
+.card-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .payment-form {
-    width: 90%;
+.card-field label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#card-number, #card-expiry, #card-cvc {
+  padding: 7px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+
+/* Card brand logo */
+#card-brand {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  width: 30px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#card-errors {
+  margin-top: 10px;
+  color: red;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #card-container {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
 

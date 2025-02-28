@@ -29,30 +29,21 @@
 }
 
 #card-container {
-  display: flex;
-  gap: 15px;
-  max-width: 750px;
-  align-items: center;
-  justify-content: space-between;
 }
 
-.card-field {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.card-field label {
+.major-label{
   font-weight: bold;
   margin-bottom: 5px;
 }
 
+.card-field {
+}
+
 #card-number, #card-expiry, #card-cvc {
-  padding: 7px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
   background: white;
+  width:100%!important;
+  padding:20px;
+  padding-left: 25px;
 }
 
 /* Card brand logo */
@@ -95,13 +86,19 @@
   margin-top:20px;
 }
 
+
+.navbar-dark .nav-item .border-right{
+  border-right: 1px solid #66c010;
+}
+
 .navbar-dark .nav-item .nav-link{
   color:#FFF;
   border-right: 1px solid #66c010;
-  padding-right: 25px;
-  padding-left: 25px;
+  padding-right: 55px;
+  padding-left: 55px;
   font-weight: bold;
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 .navbar-dark .nav-item .nav-link:hover{
@@ -229,6 +226,21 @@
   color:#FFF;
   background:#66c010;
   font-size:17px;
+}
+
+
+
+#checkout-header{
+  padding:100px;
+  height: 50vh;
+  background: #0e1a04;
+}
+
+#checkout-header .header-text{
+  color:#FFF;
+  font-weight: bold;
+  font-size: 60px;
+  margin-top: 30px;
 }
 
 #semi-header{
@@ -858,6 +870,12 @@
   margin-bottom: 20px;
 }
 
+#checkout .form-control{
+  border-radius: 0px;
+  padding:10px;
+  padding-left: 25px;
+}
+
 #checkout .top-text{
   text-transform: uppercase;
 }
@@ -896,6 +914,27 @@
   color:#FFF;
   font-weight: bold;
   font-family: Oswald;
+}
+
+#checkout .main-link{
+  color:#66c010;
+}
+
+#checkout #price-box{
+  background: #FFF;
+  border:2px solid #66c010;
+  padding:30px;
+  margin-top:50px;
+}
+
+#checkout #price-box .right-bold{
+  font-weight: bold;
+  float:right;
+  font-size: 16px;
+}
+
+#checkout #price-box .main-text{
+  font-size:16px;
 }
 
 #video-container{

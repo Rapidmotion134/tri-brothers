@@ -1,232 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <title>Checkout - TriBrothers Freight LLC</title>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Complete your checkout with Tri Brothers LLC and take the next step toward seamless trucking solutions.">
-
+  <meta name="description" content="Complete your checkout with Tri Brothers LLC and take the next step toward seamless trucking solutions.">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-
   <style>
     .navbar-dark .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
+    /* Optional: style adjustments for Stripe elements */
+    .stripe-input {
+      padding: 0.375rem 0.75rem;
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      background-color: #fff;
+    }
+    .card-container {
+      /* Use a class instead of id to allow multiple instances */
+      margin-bottom: 1rem;
+    }
   </style>
 </head>
-
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark" id="nav">
     <center>
       <div class="container-fluid">
-
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="top-section">
-                <div class="social-wrapper">
-                  <a href="https://facebook.com/tribrothersusa/" class="social-links">
-                    <i class="bi bi-facebook"></i>
-                  </a>
-                  <a href="https://www.instagram.com/tribrothersusa/" class="social-links">
-                    <i class="bi bi-instagram"></i>
-                  </a>
-                </div>
-                <a href="signup.html" class="major-button">SIGN UP</a>
-                <a href="https://account-dev.tribrothersusa.com/" class="major-button" target=”_blank”>CLIENT LOGIN</a>
-
-                <a href="#" class="join-button">
-                  <i class="bi bi-person-circle"></i> Join our Community
-                </a><br><br>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="top-section">
+              <div class="social-wrapper">
+                <a href="https://facebook.com/tribrothersusa/" class="social-links">
+                  <i class="bi bi-facebook"></i>
+                </a>
+                <a href="https://www.instagram.com/tribrothersusa/" class="social-links">
+                  <i class="bi bi-instagram"></i>
+                </a>
               </div>
-
-
-            </div>
-
-            <div class="col-lg-8">
-              <img src="image/logo.png" class="nav-brand">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                      <a href="index.html" class="nav-link">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="services.html" class="nav-link">Services</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="about.html" class="nav-link">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="faq.html" class="nav-link">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="contact.html" class="nav-link">Contact</a>
-                  </li>
-                </ul>
-              </div>
+              <a href="signup.html" class="major-button">SIGN UP</a>
+              <a href="https://account-dev.tribrothersusa.com/" class="major-button" target="_blank">CLIENT LOGIN</a>
+              <a href="#" class="join-button">
+                <i class="bi bi-person-circle"></i> Join our Community
+              </a><br><br>
             </div>
           </div>
-    </div>
-  </center>
+          <div class="col-lg-8">
+            <img src="image/logo.png" class="nav-brand" alt="logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link border-right">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="services.html" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a href="about.html" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="faq.html" class="nav-link">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
   </nav>
 
+  <section id="checkout-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="header-text"><span class="dynamic-heading"></span> REGISTRATION</h1>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="checkout">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8" id="form-container">
-          <h1 class="header-text"><span id="dynamic-heading"></span> REGISTRATION</h1>
+        <div class="col-lg-9" id="form-container">
           <br>
           <h3 class="main-text">Personal Information</h3>
+          <p class="sub-text">Already have an account? <a href="https://account-dev.tribrothersusa.com/" class="main-link">Login to your portal</a></p>
           <form action="success-reg.html" method="post" id="payment-form">
             <div class="row">
+              <!-- Personal Information -->
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">FIRST NAME</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="firstName"
-                    placeholder="Enter Firstname" required>
+                  <input type="text" class="form-control shadow-none" name="firstName" id="firstName" placeholder="Enter Firstname" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">LAST NAME</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="lastName"
-                    placeholder="Enter Lastname" required>
+                  <input type="text" class="form-control shadow-none" name="lastName" id="lastName" placeholder="Enter Lastname" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
-                  <label class="top-text">Username</label>
-                  <input type="text" class="form-control shadow-none" name="userame" id="username"
-                    placeholder="Enter username" required>
+                  <label class="top-text">USERNAME</label>
+                  <input type="text" class="form-control shadow-none" name="username" id="username" placeholder="Enter username" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">PHONE NUMBER</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="phone"
-                    placeholder="Enter Phonenumber" required>
+                  <input type="text" class="form-control shadow-none" name="phone" id="phone" placeholder="Enter Phonenumber" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">EMAIL ADDRESS</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="email"
-                    placeholder="Enter Email Address" required>
+                  <input type="text" class="form-control shadow-none" name="email" id="email" placeholder="Enter Email Address" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">Address</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="address1"
-                    placeholder="Enter Address" required>
+                  <input type="text" class="form-control shadow-none" name="address1" id="address1" placeholder="Enter Address" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">City</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="city"
-                    placeholder="Enter City" required>
+                  <input type="text" class="form-control shadow-none" name="city" id="city" placeholder="Enter City" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">ZIP Code</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="zipCode"
-                    placeholder="Enter Zipcode" required>
+                  <input type="text" class="form-control shadow-none" name="zipCode" id="zipCode" placeholder="Enter Zipcode" required>
                 </div>
               </div>
-
+              <!-- Password Fields -->
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
+                <div class="form-group position-relative">
                   <label class="top-text">Password</label>
-                  <input type="password" class="form-control shadow-none" name="First Name" id="password"
-                    placeholder="Enter Password" required>
+                  <div class="input-group">
+                    <input type="password" class="form-control shadow-none" id="password" placeholder="Enter Password" required>
+                    <button class="toggle-password" type="button" onclick="togglePassword('password', 'togglePasswordIcon1')">
+                      <i id="togglePasswordIcon1" class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
+                <div class="form-group position-relative">
                   <label class="top-text">Confirm Password</label>
-                  <input type="password" class="form-control shadow-none" name="First Name" id="cPassword"
-                    placeholder="Enter Password" required>
+                  <div class="input-group">
+                    <input type="password" class="form-control shadow-none" id="cPassword" placeholder="Enter Password" required>
+                    <button class="toggle-password" type="button" onclick="togglePassword('cPassword', 'togglePasswordIcon2')">
+                      <i id="togglePasswordIcon2" class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
             <br><br>
+            <!-- Document Information -->
             <h3 class="main-text">DOCUMENT INFORMATION</h3>
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">UCR NUMBER</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter UCR Number" required>
+                  <input type="text" class="form-control shadow-none" name="ucr" id="ucr" placeholder="Enter UCR Number" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">TAX ID</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter TAXID" required>
+                  <input type="text" class="form-control shadow-none" name="taxId" id="tax-id" placeholder="Enter TAXID" required>
                 </div>
               </div>
-
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">TIN</label>
-                  <input type="text" class="form-control shadow-none" name="First Name" id="First Name"
-                    placeholder="Enter TIN" required>
+                  <input type="text" class="form-control shadow-none" name="tin" id="tin" placeholder="Enter TIN" required>
                 </div>
               </div>
             </div>
-
-
             <br><br>
+            <!-- Payment Information -->
             <h3 class="main-text">PAYMENT INFORMATION</h3>
             <div class="row">
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
-                  <label class="top-text">CARDHOLDER NAME</label>
-                  <input type="text" class="form-control shadow-none" name="Card Holder" id="card-holder"
-                    placeholder="Enter Cardholder Name" required>
+                  <label class="main-label">CARDHOLDER NAME</label>
+                  <input type="text" class="form-control shadow-none" name="cardHolder" id="card-holder" placeholder="Enter Cardholder Name" required>
                 </div>
               </div>
-              <label class="top-text">Card details</label>
-              <div id="card-element"></div>
-              <div id="card-errors"></div>
-
             </div>
-
+            <div class="row">
+              <label class="top-text">Card details</label>
+              <div class="col-lg-4">
+                <div class="card-container">
+                  <div class="card-field">
+                    <label class="major-label">Card Number</label>
+                    <div id="card-number" class="form-control stripe-input"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card-container">
+                  <div class="card-field">
+                    <label class="major-label">Expiry Date</label>
+                    <div id="card-expiry" class="form-control stripe-input"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="card-container">
+                  <div class="card-field">
+                    <label class="major-label">CVC</label>
+                    <div id="card-cvc" class="form-control stripe-input"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12" id="price-box">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <h6 class="main-text">Service Title</h6>
+                  </div>
+                  <div class="col-lg-6">
+                    <h6 class="right-bold"><span class="dynamic-heading"></span></h6>
+                  </div>
+                  <div class="col-lg-6">
+                    <h6 class="main-text">Service Price</h6>
+                  </div>
+                  <div class="col-lg-6">
+                    <h6 class="right-bold">50.00$</h6>
+                  </div>
+                  <hr>
+                  <div class="col-lg-6">
+                    <h6 class="main-text">Sub Total</h6>
+                  </div>
+                  <div class="col-lg-6">
+                    <h6 class="right-bold">50.00$</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="card-errors" role="alert"></div>
+            <div class="terms-container">
+              <input type="checkbox" id="terms" required>
+              <label for="terms">
+                I agree to the <a href="terms.html" target="_blank" class="main-link">Terms and Conditions</a>
+              </label>
+            </div>
+            <span id="terms-error" class="error-message"></span>
             <center><br><br>
-              <button type="submit" id="finish" class="main-btn">Create Account</button>
+              <button type="submit" id="finish" class="main-btn">Finish Payment</button>
             </center>
           </form>
         </div>
       </div>
-
     </div>
   </section>
-
 
   <footer id="footer">
     <div class="container-fluid">
@@ -235,51 +280,113 @@
           <p class="sub-text">Tel: (469) 908-1110</p>
           <p class="sub-text">info@tribrothersusa.com</p>
           <p class="sub-text">5125 W Oquendo Rd, Ste 8,<br> Las Vegas, NV 89118</p><br>
-          <p class="sub-text">&copy 2025 Tri Brothers LLC</p>
+          <p class="sub-text">&copy 2024 Tri Brothers LLC</p>
         </div>
-
         <div class="col-lg-3">
           <center>
-            <a href="https://facebook.com/tribrothersusa/" class="social-icons">
+            <a href="#" class="social-icons">
               <i class="bi bi-facebook"></i>
             </a>
-            <a href="https://www.instagram.com/tribrothersusa/?hl=en" class="social-icons">
-              <i class="bi bi-instagram"></i>
-              </a>
+            <a href="#" class="social-icons">
+              <i class="bi bi-twitter"></i>
+            </a>
+            <a href="#" class="social-icons">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="#" class="social-icons">
+              <i class="bi bi-youtube"></i>
+            </a>
             <br>
             <div class="link-container">
-              <center>
-                <a href="terms.html" class="main-link">Terms and conditions</a>
-                <a href="privacy.html" class="main-link">Privacy Policy</a>
-              </center>
+              <a href="terms.html" class="main-link">Terms and conditions</a>
+              <a href="privacy.html" class="main-link">Privacy Policy</a>
             </div>
           </center>
         </div>
-
         <div class="col-lg-3">
           <a href="#nav" class="on-top">Back to top <i class="bi bi-arrow-up"></i></a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="https://js.stripe.com/v3/"></script>
-
   <script>
-    const stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF"); // Replace with your Stripe Publishable Key
-    const elements = stripe.elements();
-    const card = elements.create("card");
-    card.mount("#card-element");
+    // Terms and Conditions Validation
+    document.getElementById("payment-form").addEventListener("submit", function(event) {
+      var termsCheckbox = document.getElementById("terms");
+      var termsError = document.getElementById("terms-error");
+      if (!termsCheckbox.checked) {
+          event.preventDefault(); // Stop form submission
+          termsError.textContent = "You must agree to the terms and conditions.";
+      } else {
+          termsError.textContent = ""; // Clear error if checked
+      }
+    });
 
-    const params = new URLSearchParams(window.location.search);
-    const service = params.get("service");
-
-    if (service) {
-      const heading = document.getElementById("dynamic-heading");
-      heading.textContent = service;
+    // Show/Hide Password Function
+    function togglePassword(inputId, iconId) {
+      const input = document.getElementById(inputId);
+      const icon = document.getElementById(iconId);
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("bi-eye", "bi-eye-slash");
+      } else {
+        input.type = "password";
+        icon.classList.replace("bi-eye-slash", "bi-eye");
+      }
     }
 
+    // Initialize Stripe
+    var stripe = Stripe("your-public-key-here");
+    var elements = stripe.elements();
+
+    // Card Number Field with Brand Detection
+    var cardNumber = elements.create("cardNumber", {
+      showIcon: true,
+      placeholder: "Enter Card Number"
+    });
+    cardNumber.mount("#card-number");
+
+    // Expiry Date Field
+    var cardExpiry = elements.create("cardExpiry");
+    cardExpiry.mount("#card-expiry");
+
+    // CVC Field
+    var cardCvc = elements.create("cardCvc");
+    cardCvc.mount("#card-cvc");
+
+    // Update card number placeholder with detected card brand and handle errors
+    cardNumber.on("change", function(event) {
+      var brand = event.brand;
+      var placeholderText = "Enter Card Number";
+      if (brand && brand !== "unknown") {
+          placeholderText = `Enter ${brand.toUpperCase()} Card Number`;
+      }
+      cardNumber.update({ placeholder: placeholderText });
+
+      var displayError = document.getElementById("card-errors");
+      if (event.error) {
+          displayError.textContent = event.error.message;
+      } else {
+          displayError.textContent = "";
+      }
+    });
+
+    // Update dynamic headings with service from URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const service = params.get("service");
+    if (service) {
+      const headings = document.querySelectorAll(".dynamic-heading");
+      headings.forEach(heading => {
+        heading.textContent = service;
+      });
+    }
+
+    // Grab form fields for registration (if needed later)
     const firstName = document.querySelector('#firstName');
     const cardHolder = document.querySelector('#card-holder');
     const lastName = document.querySelector('#lastName');
@@ -291,33 +398,32 @@
     const zipCode = document.querySelector('#zipCode');
     const password = document.querySelector('#password');
     const cPassword = document.querySelector('#cPassword');
-
     let services = [];
     let serviceBought;
-    fetch(`https://api-dev.tribrothersusa.com/services`, {
-      // fetch('http://localhost:3000/services', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(response => response.json())
-      .then((data) => {
-        services = data;
-        services.forEach((serv) => {
-          if (serv.name === service) {
-            serviceBought = serv;
-          }
-        });
-      })
-      .catch(error => console.error('Error:', error));
 
+    // Fetch available services
+    fetch(`https://api-dev.tribrothersusa.com/services`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    })
+    .then(response => response.json())
+    .then((data) => {
+      services = data;
+      services.forEach((serv) => {
+        if (serv.name === service) {
+          serviceBought = serv;
+        }
+      });
+    })
+    .catch(error => console.error('Error:', error));
+
+    // Finish Payment Button Click Handler
     document.querySelector('#finish').addEventListener('click', async (event) => {
       event.preventDefault(); // Prevent default form submission
 
       const { paymentMethod, error } = await stripe.createPaymentMethod({
         type: "card",
-        card: card
+        card: cardNumber
       });
 
       // Check password match
@@ -328,17 +434,13 @@
 
       // Validate required fields
       if (firstName.value && lastName.value && username.value && phone.value && email.value &&
-        password.value && address1.value && city.value && zipCode.value) {
-
+          password.value && address1.value && city.value && zipCode.value) {
         if (error) {
           document.getElementById("card-errors").textContent = error.message;
         } else {
           fetch('https://api-dev.tribrothersusa.com/auth/register', {
-            // fetch('http://localhost:3000/auth/register', {
             method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               firstName: firstName.value,
               lastName: lastName.value,
@@ -351,65 +453,58 @@
               zipcode: zipCode.value
             })
           })
-            .then(response => {
-              if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+          })
+          .then((data) => {
+            fetch('https://api-dev.tribrothersusa.com/order', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${data.access_token}`,
+              },
+              body: JSON.stringify({
+                title: serviceBought.name,
+                userId: data.userId,
+                service: serviceBought,
+              })
+            })
+            .then((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                throw new Error();
               }
-              return response.json();
             })
             .then((data) => {
-              fetch('https://api-dev.tribrothersusa.com/order', {
-                // fetch('http://localhost:3000/order', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${data.access_token}`,
-                },
-                body: JSON.stringify({
-                  title: serviceBought.name,
-                  userId: data.userId,
-                  service: serviceBought,
-                })
+              stripe.confirmCardPayment(data.client_secret, {
+                payment_method: {
+                  card: cardNumber,
+                  billing_details: { name: cardHolder.value },
+                }
               })
-                .then((response) => {
-                  if (response.ok) {
-                    return response.json();
-                  } else {
-                    throw new Error();
-                  }
-                })
-                .then((data) => {
-                  stripe.confirmCardPayment(data.client_secret, {
-                    payment_method: {
-                      card: card,
-                      billing_details: {
-                        name: cardHolder.value,
-                      },
-                    }
-                  })
-                    .then((result) => {
-                      if (result.error) {
-                        console.error(result.error);
-                      } else {
-                        window.location.href = 'success-reg.html';
-                      }
-                    });
-                  //todo: after the success page redirect to management console
-                  // window.location.href = 'https://account-dev.tribrothersusa.com/login' //replace with the proper address
-                })
-                .catch(error => console.error('Error:', error));
+              .then((result) => {
+                if (result.error) {
+                  console.error(result.error);
+                } else {
+                  window.location.href = 'success-reg.html';
+                }
+              });
             })
-            .catch(error => {
-              console.error('Error:', error);
-              alert('An error occurred during registration. Please try again.');
-            });
+            .catch(error => console.error('Error:', error));
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred during registration. Please try again.');
+          });
         }
       } else {
         alert('Please fill all required fields.');
       }
     });
   </script>
-
 </body>
-
 </html>

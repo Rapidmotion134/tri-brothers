@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Checkout - TriBrothers Freight LLC</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Complete your checkout with Tri Brothers LLC and take the next step toward seamless trucking solutions.">
+  <meta name="description"
+    content="Complete your checkout with Tri Brothers LLC and take the next step toward seamless trucking solutions.">
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Main Stylesheet -->
@@ -14,6 +16,7 @@
     .navbar-dark .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
+
     /* Optional: style adjustments for Stripe elements */
     .stripe-input {
       padding: 0.375rem 0.75rem;
@@ -21,12 +24,14 @@
       border-radius: 0.25rem;
       background-color: #fff;
     }
+
     .card-container {
       /* Use a class instead of id to allow multiple instances */
       margin-bottom: 1rem;
     }
   </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark" id="nav">
     <center>
@@ -96,56 +101,58 @@
         <div class="col-lg-9" id="form-container">
           <br>
           <h3 class="main-text">Personal Information</h3>
-          <p class="sub-text">Already have an account? <a href="https://account-dev.tribrothersusa.com/" class="main-link">Login to your portal</a></p>
+          <p class="sub-text">Already have an account? <a href="https://account-dev.tribrothersusa.com/"
+              class="main-link">Login to your portal</a></p>
           <form action="success-reg.html" method="post" id="payment-form">
             <div class="row">
               <!-- Personal Information -->
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">FIRST NAME</label>
-                  <input type="text" class="form-control shadow-none" name="firstName" id="firstName" placeholder="Enter Firstname" required>
+                  <input type="text" class="form-control shadow-none" name="firstName" id="firstName"
+                    placeholder="Enter Firstname" required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">LAST NAME</label>
-                  <input type="text" class="form-control shadow-none" name="lastName" id="lastName" placeholder="Enter Lastname" required>
-                </div>
-              </div>
-              <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <div class="form-group">
-                  <label class="top-text">USERNAME</label>
-                  <input type="text" class="form-control shadow-none" name="username" id="username" placeholder="Enter username" required>
+                  <input type="text" class="form-control shadow-none" name="lastName" id="lastName"
+                    placeholder="Enter Lastname" required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">PHONE NUMBER</label>
-                  <input type="text" class="form-control shadow-none" name="phone" id="phone" placeholder="Enter Phonenumber" required>
+                  <input type="text" class="form-control shadow-none" name="phone" id="phone"
+                    placeholder="Enter Phonenumber" required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">EMAIL ADDRESS</label>
-                  <input type="text" class="form-control shadow-none" name="email" id="email" placeholder="Enter Email Address" required>
+                  <input type="text" class="form-control shadow-none" name="email" id="email"
+                    placeholder="Enter Email Address" required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">Address</label>
-                  <input type="text" class="form-control shadow-none" name="address1" id="address1" placeholder="Enter Address" required>
+                  <input type="text" class="form-control shadow-none" name="address1" id="address1"
+                    placeholder="Enter Address" required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">City</label>
-                  <input type="text" class="form-control shadow-none" name="city" id="city" placeholder="Enter City" required>
+                  <input type="text" class="form-control shadow-none" name="city" id="city" placeholder="Enter City"
+                    required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">ZIP Code</label>
-                  <input type="text" class="form-control shadow-none" name="zipCode" id="zipCode" placeholder="Enter Zipcode" required>
+                  <input type="text" class="form-control shadow-none" name="zipCode" id="zipCode"
+                    placeholder="Enter Zipcode" required>
                 </div>
               </div>
               <!-- Password Fields -->
@@ -153,8 +160,10 @@
                 <div class="form-group position-relative">
                   <label class="top-text">Password</label>
                   <div class="input-group">
-                    <input type="password" class="form-control shadow-none" id="password" placeholder="Enter Password" required>
-                    <button class="toggle-password" type="button" onclick="togglePassword('password', 'togglePasswordIcon1')">
+                    <input type="password" class="form-control shadow-none" id="password" placeholder="Enter Password"
+                      required>
+                    <button class="toggle-password" type="button"
+                      onclick="togglePassword('password', 'togglePasswordIcon1')">
                       <i id="togglePasswordIcon1" class="bi bi-eye"></i>
                     </button>
                   </div>
@@ -164,8 +173,10 @@
                 <div class="form-group position-relative">
                   <label class="top-text">Confirm Password</label>
                   <div class="input-group">
-                    <input type="password" class="form-control shadow-none" id="cPassword" placeholder="Enter Password" required>
-                    <button class="toggle-password" type="button" onclick="togglePassword('cPassword', 'togglePasswordIcon2')">
+                    <input type="password" class="form-control shadow-none" id="cPassword" placeholder="Enter Password"
+                      required>
+                    <button class="toggle-password" type="button"
+                      onclick="togglePassword('cPassword', 'togglePasswordIcon2')">
                       <i id="togglePasswordIcon2" class="bi bi-eye"></i>
                     </button>
                   </div>
@@ -179,19 +190,22 @@
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">UCR NUMBER</label>
-                  <input type="text" class="form-control shadow-none" name="ucr" id="ucr" placeholder="Enter UCR Number" required>
+                  <input type="text" class="form-control shadow-none" name="ucr" id="ucr" placeholder="Enter UCR Number"
+                    required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">TAX ID</label>
-                  <input type="text" class="form-control shadow-none" name="taxId" id="tax-id" placeholder="Enter TAXID" required>
+                  <input type="text" class="form-control shadow-none" name="taxId" id="tax-id" placeholder="Enter TAXID"
+                    required>
                 </div>
               </div>
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="top-text">TIN</label>
-                  <input type="text" class="form-control shadow-none" name="tin" id="tin" placeholder="Enter TIN" required>
+                  <input type="text" class="form-control shadow-none" name="tin" id="tin" placeholder="Enter TIN"
+                    required>
                 </div>
               </div>
             </div>
@@ -202,7 +216,8 @@
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="form-group">
                   <label class="main-label">CARDHOLDER NAME</label>
-                  <input type="text" class="form-control shadow-none" name="cardHolder" id="card-holder" placeholder="Enter Cardholder Name" required>
+                  <input type="text" class="form-control shadow-none" name="cardHolder" id="card-holder"
+                    placeholder="Enter Cardholder Name" required>
                 </div>
               </div>
             </div>
@@ -316,14 +331,14 @@
   <script src="https://js.stripe.com/v3/"></script>
   <script>
     // Terms and Conditions Validation
-    document.getElementById("payment-form").addEventListener("submit", function(event) {
+    document.getElementById("payment-form").addEventListener("submit", function (event) {
       var termsCheckbox = document.getElementById("terms");
       var termsError = document.getElementById("terms-error");
       if (!termsCheckbox.checked) {
-          event.preventDefault(); // Stop form submission
-          termsError.textContent = "You must agree to the terms and conditions.";
+        event.preventDefault(); // Stop form submission
+        termsError.textContent = "You must agree to the terms and conditions.";
       } else {
-          termsError.textContent = ""; // Clear error if checked
+        termsError.textContent = ""; // Clear error if checked
       }
     });
 
@@ -341,7 +356,8 @@
     }
 
     // Initialize Stripe
-    var stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF");
+    // var stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF");
+    var stripe = Stripe("pk_live_51QUXObJtZUwAyH7vWzkA3jTnzoSUmMwVqzihKTVQY1ubR8mtbZZ9ZaZqyVIOkIxxVxlK9leOZX84XCnEGB3uwEPa00Tyr2oloX");
     var elements = stripe.elements();
 
     // Card Number Field with Brand Detection
@@ -360,19 +376,19 @@
     cardCvc.mount("#card-cvc");
 
     // Update card number placeholder with detected card brand and handle errors
-    cardNumber.on("change", function(event) {
+    cardNumber.on("change", function (event) {
       var brand = event.brand;
       var placeholderText = "Enter Card Number";
       if (brand && brand !== "unknown") {
-          placeholderText = `Enter ${brand.toUpperCase()} Card Number`;
+        placeholderText = `Enter ${brand.toUpperCase()} Card Number`;
       }
       cardNumber.update({ placeholder: placeholderText });
 
       var displayError = document.getElementById("card-errors");
       if (event.error) {
-          displayError.textContent = event.error.message;
+        displayError.textContent = event.error.message;
       } else {
-          displayError.textContent = "";
+        displayError.textContent = "";
       }
     });
 
@@ -390,7 +406,6 @@
     const firstName = document.querySelector('#firstName');
     const cardHolder = document.querySelector('#card-holder');
     const lastName = document.querySelector('#lastName');
-    const username = document.querySelector('#username');
     const phone = document.querySelector('#phone');
     const email = document.querySelector('#email');
     const address1 = document.querySelector('#address1');
@@ -406,16 +421,16 @@
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
-    .then(response => response.json())
-    .then((data) => {
-      services = data;
-      services.forEach((serv) => {
-        if (serv.name === service) {
-          serviceBought = serv;
-        }
-      });
-    })
-    .catch(error => console.error('Error:', error));
+      .then(response => response.json())
+      .then((data) => {
+        services = data;
+        services.forEach((serv) => {
+          if (serv.name === service) {
+            serviceBought = serv;
+          }
+        });
+      })
+      .catch(error => console.error('Error:', error));
 
     // Finish Payment Button Click Handler
     document.querySelector('#finish').addEventListener('click', async (event) => {
@@ -433,18 +448,18 @@
       }
 
       // Validate required fields
-      if (firstName.value && lastName.value && username.value && phone.value && email.value &&
-          password.value && address1.value && city.value && zipCode.value) {
+      if (firstName.value && lastName.value && phone.value && email.value &&
+        password.value && address1.value && city.value && zipCode.value) {
         if (error) {
           document.getElementById("card-errors").textContent = error.message;
         } else {
           fetch('https://api-dev.tribrothersusa.com/auth/register', {
+            // fetch('http://localhost:3000/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
               firstName: firstName.value,
               lastName: lastName.value,
-              username: username.value,
               phone: phone.value,
               email: email.value,
               password: password.value,
@@ -453,53 +468,54 @@
               zipcode: zipCode.value
             })
           })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then((data) => {
-            fetch('https://api-dev.tribrothersusa.com/order', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${data.access_token}`,
-              },
-              body: JSON.stringify({
-                title: serviceBought.name,
-                userId: data.userId,
-                service: serviceBought,
-              })
-            })
-            .then((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                throw new Error();
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
               }
+              return response.json();
             })
             .then((data) => {
-              stripe.confirmCardPayment(data.client_secret, {
-                payment_method: {
-                  card: cardNumber,
-                  billing_details: { name: cardHolder.value },
-                }
+              fetch('https://api-dev.tribrothersusa.com/order', {
+                // fetch('http://localhost:3000/order', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer ${data.access_token}`,
+                },
+                body: JSON.stringify({
+                  title: serviceBought.name,
+                  userId: data.userId,
+                  service: serviceBought,
+                })
               })
-              .then((result) => {
-                if (result.error) {
-                  console.error(result.error);
-                } else {
-                  window.location.href = 'success-reg.html';
-                }
-              });
+                .then((response) => {
+                  if (response.ok) {
+                    return response.json();
+                  } else {
+                    throw new Error();
+                  }
+                })
+                .then((data) => {
+                  stripe.confirmCardPayment(data.client_secret, {
+                    payment_method: {
+                      card: cardNumber,
+                      billing_details: { name: cardHolder.value },
+                    }
+                  })
+                    .then((result) => {
+                      if (result.error) {
+                        console.error(result.error);
+                      } else {
+                        window.location.href = 'success-reg.html';
+                      }
+                    });
+                })
+                .catch(error => console.error('Error:', error));
             })
-            .catch(error => console.error('Error:', error));
-          })
-          .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred during registration. Please try again.');
-          });
+            .catch(error => {
+              console.error('Error:', error);
+              alert('An error occurred during registration. Please try again.');
+            });
         }
       } else {
         alert('Please fill all required fields.');
@@ -507,4 +523,5 @@
     });
   </script>
 </body>
+
 </html>

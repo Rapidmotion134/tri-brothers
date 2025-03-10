@@ -356,7 +356,6 @@
     }
 
     // Initialize Stripe
-    // var stripe = Stripe("pk_test_51QUXObJtZUwAyH7vCt07aqY8N4mdsnsOkHyiBQ91Qi9sdFE9MxnpMQPhD20m9G5nFudUv1NvH1bXYxZqj8aY6INp00f16ZEqrF");
     var stripe = Stripe("pk_live_51QUXObJtZUwAyH7vWzkA3jTnzoSUmMwVqzihKTVQY1ubR8mtbZZ9ZaZqyVIOkIxxVxlK9leOZX84XCnEGB3uwEPa00Tyr2oloX");
     var elements = stripe.elements();
 
@@ -454,7 +453,6 @@
           document.getElementById("card-errors").textContent = error.message;
         } else {
           fetch('https://api-dev.tribrothersusa.com/auth/register', {
-            // fetch('http://localhost:3000/auth/register', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -476,7 +474,6 @@
             })
             .then((data) => {
               fetch('https://api-dev.tribrothersusa.com/order', {
-                // fetch('http://localhost:3000/order', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',

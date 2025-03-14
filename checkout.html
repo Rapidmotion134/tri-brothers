@@ -414,6 +414,7 @@
     const cPassword = document.querySelector('#cPassword');
     let services = [];
     let serviceBought;
+    let access_token;
 
     // Fetch available services
     fetch(`https://api-dev.tribrothersusa.com/services`, {
@@ -473,25 +474,17 @@
               return response.json();
             })
             .then((data) => {
-              fetch('https://api-dev.tribrothersusa.com/order', {
+              access_token = data.access_token;
+              fetch('https://api-dev.tribrothersusa.com/stripe/payment', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
-                  'Authorization': `Bearer ${data.access_token}`,
+                  'Authorization': `Bearer ${access_token}`,
                 },
                 body: JSON.stringify({
-                  title: serviceBought.name,
-                  userId: data.userId,
-                  service: serviceBought,
+                  service: service.name
                 })
               })
-                .then((response) => {
-                  if (response.ok) {
-                    return response.json();
-                  } else {
-                    throw new Error();
-                  }
-                })
                 .then((data) => {
                   stripe.confirmCardPayment(data.client_secret, {
                     payment_method: {
@@ -503,7 +496,25 @@
                       if (result.error) {
                         console.error(result.error);
                       } else {
-                        window.location.href = 'success-reg.html';
+                        fetch('https://api-dev.tribrothersusa.com/order', {
+                          method: 'POST',
+                          headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${access_token}`,
+                          },
+                          body: JSON.stringify({
+                            title: serviceBought.name,
+                            userId: data.userId,
+                            service: serviceBought,
+                          })
+                        })
+                          .then((response) => {
+                            if (response.ok) {
+                              window.location.href = 'success-reg.html';
+                            } else {
+                              throw new Error();
+                            }
+                          })
                       }
                     });
                 })

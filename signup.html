@@ -86,7 +86,7 @@
           <h1 class="header-text">CREATE YOUR ACCOUNT</h1>
           <br>
           <h3 class="main-text">Personal Information</h3>
-          <form action="success-reg.html" method="post">
+          <form action="success-reg.html" method="post" id="payment-form">
             <div class="row">
               <!-- Personal Information -->
               <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -157,17 +157,18 @@
                     <button class="toggle-password" type="button" onclick="togglePassword('cPassword', 'togglePasswordIcon2')">
                       <i id="togglePasswordIcon2" class="bi bi-eye"></i>
                     </button>
+                    </div>
                   </div>
                 </div>
+
+                <center><br><br>
+                  <button type="submit" id="finish" class="main-btn">Finish Registration</button>
+                </center>
               </div>
-            </div>
-
-              <center><br><br>
-                <button type="submit" id="finish" class="main-btn">Create Account</button>
-              </center>
-
-            </div>
-          </form>
+              <br><br>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -215,54 +216,90 @@
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script>
-  document.querySelector('#finish').addEventListener('click', (event) => {
-  event.preventDefault(); // Prevent the default form submission
+  document.addEventListener('DOMContentLoaded', () => {
+    // Elements
+    const form       = document.getElementById('payment-form');
+    const firstName  = document.getElementById('firstName');
+    const lastName   = document.getElementById('lastName');
+    const username   = document.getElementById('username');
+    const phone      = document.getElementById('phone');
+    const email      = document.getElementById('email');
+    const address1   = document.getElementById('address1');
+    const city       = document.getElementById('city');
+    const zipCode    = document.getElementById('zipCode');
+    const password   = document.getElementById('password');
+    const cPassword  = document.getElementById('cPassword');
+    const formError  = document.createElement('div');
 
-  if (password.value !== cPassword.value) {
-    alert('Passwords do not match!');
-    return;
-  }
+    formError.id = 'form-error';
+    formError.style.color = 'red';
+    form.prepend(formError);
 
-  if (firstName.value && lastName.value && phone.value && email.value && username.value &&
-      password.value && address1.value && address2.value && city.value && zipCode.value) {
-    fetch('https://api-dev.tribrothersusa.com/auth/register', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        firstName: firstName.value,
-        lastName: lastName.value,
-        phone: phone.value,
-        email: email.value,
-        username: username.value,
-        password: password.value,
-        address1: address1.value,
-        address2: address2.value,
-        city: city.value,
-        zipcode: zipCode.value
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
+    // Toggle-password utility
+    window.togglePassword = (inputId, iconId) => {
+      const input = document.getElementById(inputId);
+      const icon  = document.getElementById(iconId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.replace('bi-eye', 'bi-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.replace('bi-eye-slash', 'bi-eye');
       }
-      return response.json();
-    })
-    .then(data => {
-      console.log('Success:', data);
-      // Redirect to the success page
-      window.location.href = 'success-reg.html';
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      alert('An error occurred during registration. Please try again.');
+    };
+
+    // Form submission handler
+    form.addEventListener('submit', async (evt) => {
+      evt.preventDefault();
+      formError.textContent = '';
+
+      // Password match check
+      if (password.value !== cPassword.value) {
+        formError.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      // Required-fields check
+      const fields = [ firstName, lastName, username, phone, email, address1, city, zipCode, password ];
+      if (fields.some(f => !f.value.trim())) {
+        formError.textContent = 'Please fill in all required fields.';
+        return;
+      }
+
+      // Build payload
+      const payload = {
+        firstName: firstName.value.trim(),
+        lastName:  lastName.value.trim(),
+        username:  username.value.trim(),
+        phone:     phone.value.trim(),
+        email:     email.value.trim(),
+        password:  password.value,
+        address1:  address1.value.trim(),
+        city:      city.value.trim(),
+        zipcode:   zipCode.value.trim()
+      };
+
+      try {
+        const res = await fetch('https://api-dev.tribrothersusa.com/auth/register', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          const errText = await res.text();
+          throw new Error(`Status ${res.status}: ${errText}`);
+        }
+
+        // On success, redirect
+        window.location.href = 'success-reg.html';
+      } catch (err) {
+        console.error('Registration error:', err);
+        formError.textContent = 'Registration failed. Please try again later.';
+      }
     });
-  } else {
-    alert('Please fill all required fields.');
-  }
-});
-  </script>
+  });
+</script>
 
 
 

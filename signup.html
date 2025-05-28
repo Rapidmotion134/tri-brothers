@@ -220,93 +220,78 @@
   <script src="js/bootstrap.min.js"></script>
   <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Elements
-    const form       = document.getElementById('payment-form');
-    const firstName  = document.getElementById('firstName');
-    const lastName   = document.getElementById('lastName');
-    const username   = document.getElementById('username');
-    const phone      = document.getElementById('phone');
-    const email      = document.getElementById('email');
-    const address1   = document.getElementById('address1');
-    const city       = document.getElementById('city');
-    const zipCode    = document.getElementById('zipCode');
-    const password   = document.getElementById('password');
-    const cPassword  = document.getElementById('cPassword');
-    const formError  = document.createElement('div');
+    // Terms & Conditions Validation
+    document.getElementById("payment-form").addEventListener("submit", function (event) {
+      var termsCheckbox = document.getElementById("terms");
+      var termsError    = document.getElementById("terms-error");
+      if (!termsCheckbox.checked) {
+        event.preventDefault();
+        termsError.textContent = "You must agree to the terms and conditions.";
+      } else {
+        termsError.textContent = "";
+      }
+    });
 
-    formError.id = 'form-error';
-    formError.style.color = 'red';
-    form.prepend(formError);
-
-    // Toggle-password utility
+    // Show/Hide Password
     window.togglePassword = (inputId, iconId) => {
       const input = document.getElementById(inputId);
       const icon  = document.getElementById(iconId);
-      if (input.type === 'password') {
-        input.type = 'text';
-        icon.classList.replace('bi-eye', 'bi-eye-slash');
+      if (input.type === "password") {
+        input.type = "text";
+        icon.classList.replace("bi-eye", "bi-eye-slash");
       } else {
-        input.type = 'password';
-        icon.classList.replace('bi-eye-slash', 'bi-eye');
+        input.type = "password";
+        icon.classList.replace("bi-eye-slash", "bi-eye");
       }
     };
 
-    // Form submission handler
-    form.addEventListener('submit', async (evt) => {
-      evt.preventDefault();
-      formError.textContent = '';
+    // Grab registration fields
+    const firstName = document.getElementById('firstName');
+    const lastName  = document.getElementById('lastName');
+    const phone     = document.getElementById('phone');
+    const email     = document.getElementById('email');
+    const address1  = document.getElementById('address1');
+    const city      = document.getElementById('city');
+    const zipCode   = document.getElementById('zipCode');
+    const password  = document.getElementById('password');
+    const cPassword = document.getElementById('cPassword');
+    const finishBtn = document.getElementById('finish');
 
-      // Password match check
+    finishBtn.addEventListener('click', async (event) => {
+      event.preventDefault();
+
+      // Basic validation
+      if ([ firstName, lastName, phone, email, address1, city, zipCode, password, cPassword ]
+          .some(f => !f.value.trim())) {
+        return alert('Please fill all required fields.');
+      }
       if (password.value !== cPassword.value) {
-        formError.textContent = 'Passwords do not match.';
-        return;
+        return alert('Passwords do not match!');
       }
 
-      // Required-fields check
-      const fields = [ firstName, lastName, username, phone, email, address1, city, zipCode, password ];
-      if (fields.some(f => !f.value.trim())) {
-        formError.textContent = 'Please fill in all required fields.';
-        return;
-      }
-
-      // Build payload
+      // Build and send payload
       const payload = {
         firstName: firstName.value.trim(),
         lastName:  lastName.value.trim(),
-        username:  username.value.trim(),
         phone:     phone.value.trim(),
         email:     email.value.trim(),
-        password:  password.value,
         address1:  address1.value.trim(),
         city:      city.value.trim(),
-        zipcode:   zipCode.value.trim()
+        zipcode:   zipCode.value.trim(),
+        password:  password.value
       };
 
-    
-        try {
+      try {
         const res = await fetch('https://api-dev.tribrothersusa.com/auth/register', {
           method:  'POST',
           headers: {'Content-Type': 'application/json'},
           body:    JSON.stringify(payload)
         });
-
-        if (!res.ok) {
-          // Don’t try to read text/json body—you might get a parsing error if it’s empty.
-          throw new Error(res.statusText || 'Registration failed');
-        }
-
-        // Success → redirect
+        if (!res.ok) throw new Error(res.statusText || 'Registration failed');
         window.location.href = 'success-reg.html';
       } catch (err) {
         console.error('Registration error:', err);
-        errorDiv.textContent = err.message || 'Registration failed. Please try again later.';
-      }
-
-        // On success, redirect
-        window.location.href = 'success-reg.html';
-      } catch (err) {
-        console.error('Registration error:', err);
-        formError.textContent = 'Registration failed. Please try again later.';
+        alert('An error occurred during registration. Please try again.');
       }
     });
   });

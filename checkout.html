@@ -48,7 +48,7 @@
                 </a>
               </div>
               <a href="signup.html" class="major-button">SIGN UP</a>
-              <a href="https://account-dev.tribrothersusa.com/" class="major-button" target="_blank">CLIENT LOGIN</a>
+              <a href="https://account.tribrothersusa.com/" class="major-button" target="_blank">CLIENT LOGIN</a>
               <a href="#" class="join-button">
                 <i class="bi bi-person-circle"></i> Join our Community
               </a><br><br>
@@ -101,7 +101,7 @@
         <div class="col-lg-9" id="form-container">
           <br>
           <h3 class="main-text">Personal Information</h3>
-          <p class="sub-text">Already have an account? <a href="https://account-dev.tribrothersusa.com/"
+          <p class="sub-text">Already have an account? <a href="https://account.tribrothersusa.com/"
               class="main-link">Login to your portal</a></p>
           <form action="success-reg.html" method="post" id="payment-form">
             <div class="row">
@@ -475,7 +475,7 @@
             })
             .then((data) => {
               access_token = data.access_token;
-              fetch('https://api-dev.tribrothersusa.com/stripe/payment', {
+              fetch('https://api.tribrothersusa.com/stripe/payment', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json',
@@ -496,7 +496,7 @@
                       if (result.error) {
                         console.error(result.error);
                       } else {
-                        fetch('https://api-dev.tribrothersusa.com/order', {
+                        fetch('https://api.tribrothersusa.com/order', {
                           method: 'POST',
                           headers: {
                             'Content-Type': 'application/json',

@@ -19,6 +19,10 @@
   .navbar-dark .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ffffff' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   }
+
+  .is-invalid {
+    border-color: red;
+  }
   </style>
 </head>
 <body>
@@ -257,42 +261,67 @@
     const finishBtn = document.getElementById('finish');
 
     finishBtn.addEventListener('click', async (event) => {
-      event.preventDefault();
+  event.preventDefault();
 
-      // Basic validation
-      if ([ firstName, lastName, phone, email, address1, city, zipCode, password, cPassword ]
-          .some(f => !f.value.trim())) {
-        return alert('Please fill all required fields.');
-      }
-      if (password.value !== cPassword.value) {
-        return alert('Passwords do not match!');
-      }
+  // Map of field names to input elements
+  const fields = {
+    "First Name": firstName,
+    "Last Name": lastName,
+    "Phone Number": phone,
+    "Email Address": email,
+    "Address": address1,
+    "City": city,
+    "Zip Code": zipCode,
+    "Password": password,
+    "Confirm Password": cPassword
+  };
 
-      // Build and send payload
-      const payload = {
-        firstName: firstName.value.trim(),
-        lastName:  lastName.value.trim(),
-        phone:     phone.value.trim(),
-        email:     email.value.trim(),
-        address1:  address1.value.trim(),
-        city:      city.value.trim(),
-        zipcode:   zipCode.value.trim(),
-        password:  password.value
-      };
+  let missingFields = [];
 
-      try {
-        const res = await fetch('https://api.tribrothersusa.com/auth/register', {
-          method:  'POST',
-          headers: {'Content-Type': 'application/json'},
-          body:    JSON.stringify(payload)
-        });
-        if (!res.ok) throw new Error(res.statusText || 'Registration failed');
-        window.location.href = 'success-reg.html';
-      } catch (err) {
-        console.error('Registration error:', err);
-        alert('An error occurred during registration. Please try again.');
-      }
+  for (const [label, input] of Object.entries(fields)) {
+    if (!input.value.trim()) {
+      missingFields.push(label);
+      input.classList.add("is-invalid"); // Bootstrap visual cue
+    } else {
+      input.classList.remove("is-invalid");
+    }
+  }
+
+  if (missingFields.length > 0) {
+    alert(`Please fill the following fields:\n- ${missingFields.join('\n- ')}`);
+    return;
+  }
+
+  if (password.value !== cPassword.value) {
+    alert('Passwords do not match!');
+    return;
+  }
+
+  // Build and send payload
+  const payload = {
+    firstName: firstName.value.trim(),
+    lastName:  lastName.value.trim(),
+    phone:     phone.value.trim(),
+    email:     email.value.trim(),
+    address1:  address1.value.trim(),
+    city:      city.value.trim(),
+    zipcode:   zipCode.value.trim(),
+    password:  password.value
+  };
+
+  try {
+    const res = await fetch('https://api.tribrothersusa.com/auth/register', {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body:    JSON.stringify(payload)
     });
+    if (!res.ok) throw new Error(res.statusText || 'Registration failed');
+    window.location.href = 'success-reg.html';
+  } catch (err) {
+    console.error('Registration error:', err);
+    alert('An error occurred during registration. Please try again.');
+  }
+});
   });
 </script>
 

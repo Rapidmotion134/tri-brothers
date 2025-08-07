@@ -1354,18 +1354,13 @@ body{
     padding:0px;
   }
 
-  #header #background-container #wrapper-opacity{
-    padding:10px;
-  }
-
-  #header #background-container .header-text{
-    padding-top:50px;
+  #header .header-text{
     font-size:30px;
   }
 
-  #header #background-container .sub-text{
+  #header .sub-text{
     font-size:17px;
-    width:90%;
+    width:100%;
   }
 
   #about-vision{
@@ -1380,11 +1375,21 @@ body{
     font-size:15px;
   }
 
-
   #header #background-container .main-btn{
     padding-left: 30px;
     padding-right: 30px;
     font-size:15px;
+  }
+
+  #header .main-btn{
+    display: block;
+    margin:0px;
+  }
+
+  #header .contact-btn{
+    display: block;
+    margin:0px;
+    margin-top:10px;
   }
 
   #semi-header #background-container{
@@ -1393,7 +1398,7 @@ body{
   }
 
   #semi-header #background-container .sub-text{
-    width:80%;
+    width:100%;
   }
 
   #semi-header #main-container{

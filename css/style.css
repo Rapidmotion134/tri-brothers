@@ -1,14 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
-:root {
-  --primary: #FFF;
-  --secondary: #000000;
-  --tertiary: #4b4b4b;
-  --quaternary:#f7f5f5;
-  --fifth:#9ed90f;
-  --sixth:#1d2443;
-}
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 
+body{
+  font-family: Instrument Sans;
+}
 .position-relative {
   position: relative;
 }
@@ -74,7 +68,6 @@
   background: #000;
   min-height: 200px;
   color:#FFF;
-  font-family: Oswald!important;
   padding:20px;
 }
 
@@ -94,8 +87,8 @@
 .navbar-dark .nav-item .nav-link{
   color:#FFF;
   border-right: 1px solid #66c010;
-  padding-right: 55px;
-  padding-left: 55px;
+  padding-right: 45px;
+  padding-left: 45px;
   font-weight: bold;
   transition: 0.3s;
   text-transform: uppercase;
@@ -146,8 +139,9 @@
   color:#FFF;
   background: #66c010;
   padding:12px;
-  padding-left:18px;
-  padding-right:18px;
+  padding-left:25px;
+  padding-right:25px;
+  border-radius: 30px;
   margin-right: 10px;
   margin-left: 10px;
   text-transform: uppercase;
@@ -188,47 +182,60 @@
   padding-right: 17px;
 }
 
-#header #background-container{
-  background: url('../image/marcin-jozwiak-kGoPcmpPT7c-unsplash.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 70vh;
-  padding:0px;
+#header{
+  background-color: #0e1a04;
 }
 
-#header #wrapper-opacity{
-  background: rgba(14, 26, 4, 0.8);
-  width:100%;
-  height: 100%;
-  padding-left: 100px;
-}
-
-#header #background-container .header-text{
-  font-size:75px;
-  padding-top:100px;
-  width:100%;
-  font-family: Oswald;
+#header #text-container{
+  padding:40px;
   color:#FFF;
-  width:70%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-#header #background-container .sub-text{
+#header .main-image{
+  width:100%;
+}
+
+#header .header-text{
+  font-size:55px;
+  font-weight: bold;
+  width:100%;
   color:#FFF;
-  font-size:17px;
   width:80%;
 }
 
-#header #background-container .main-btn{
+#header .sub-text{
+  color:rgba(255,255,255,0.9);
+  font-size:15px;
+  width:70%;
+  margin-top:10px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+#header .main-btn{
   padding:16px;
   padding-left: 40px;
   padding-right: 40px;
   text-decoration: none;
   color:#FFF;
   background:#66c010;
-  font-size:17px;
+  font-size:15px;
+  border-radius: 30px;
 }
 
-
+#header .contact-btn{
+  padding:16px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-decoration: none;
+  color:#000;
+  background:#FFF;
+  font-size:15px;
+  margin-left: 30px;
+  border-radius: 30px;
+}
 
 #checkout-header{
   padding:100px;
@@ -248,8 +255,9 @@
 
 #semi-header #background-container{
   background: #f0f0f0;
-  min-height: 30vh;
-  padding:100px;
+  padding:40px;
+  padding-top:40px;
+  padding-bottom: 40px;
 }
 
 #semi-header #main-container{
@@ -257,11 +265,12 @@
   background: #FFF;
   border-left: 10px solid #f0f0f0;
   border-right:10px solid #f0f0f0;
+  border-radius: 30px;
 }
 
 #semi-header .header{
   font-size:50px;
-  font-family: Oswald;
+  font-weight: bold;
   text-transform: uppercase;
   color:#66c010;
   width:60%;
@@ -270,7 +279,7 @@
 #semi-header #main-container .main-text{
   font-size: 20px;
   color:#000000;
-  font-family: Oswald;
+
   font-weight: bold;
 }
 
@@ -312,7 +321,7 @@
 #portal-intro .header-text{
   font-size:60px;
   font-weight: 600;
-  font-family: Oswald;
+
   margin:0px;
   padding:0px;
   margin-top:15px;
@@ -344,7 +353,7 @@
   margin-top:20px;
   color:#FFF;
   text-decoration: none;
-  font-family: Oswald;
+
   font-weight: 600;
 }
 
@@ -356,14 +365,15 @@
 }
 
 #background-section .header-text{
-  font-family: Oswald;
+
   font-size: 45px;
 }
 
 #background-section .sub-text{
   width:75%;
-  font-size: 18px;
+  font-size: 17px;
   margin-top:20px;
+  color:rgba(255,255,255,0.6);
 }
 
 #horizontal-list{
@@ -373,13 +383,13 @@
 }
 
 #horizontal-list .major-text{
-  font-family: Oswald;
+
   font-size: 50px;
   margin-bottom: 30px;
 }
 
 #horizontal-list .header-text{
-  font-family: Oswald;
+
   border-bottom:1px solid #000;
   padding-bottom: 3px;
 }
@@ -390,7 +400,7 @@
 
 #horizontal-list .main-btn{
   font-size:25px;
-  font-family: Oswald;
+
   float:left;
   margin-bottom: 50px;
 }
@@ -408,7 +418,7 @@
 }
 
 #horizontal-image .header-text{
-  font-family: Oswald;
+
   margin-top:10px;
   font-size: 20px;
 }
@@ -421,7 +431,7 @@
 #purchasing{
   padding:80px;
   padding-top:30px;
-  background: #000;
+  background: linear-gradient(135deg, #0e1a04 90%, #66c010 10%);
   color:#FFF;
 }
 
@@ -430,9 +440,9 @@
 }
 
 #purchasing .header-text{
-  font-family: Oswald;
   text-transform: uppercase;
   margin-bottom: 30px;
+  font-weight: bold;
 }
 
 #purchasing .main-text{
@@ -456,7 +466,7 @@
 
 #semi-structure .main-image{
   width:100%;
-  height: 600px;
+  height: 500px;
   object-fit: cover;
 }
 
@@ -467,13 +477,11 @@
 }
 
 #semi-structure .header-text{
-  font-size:60px;
+  font-size:55px;
   font-weight: 600;
-  font-family: Oswald;
   margin:0px;
+  color:#66c010;
   padding:0px;
-  margin-top:15px;
-  margin-bottom: 15px;
 }
 
 #semi-structure .mini-text{
@@ -483,9 +491,9 @@
 
 #semi-structure .sub-text{
   width:90%;
-  font-size: 18px;
-  color:#556375;
-  margin-bottom: 30px;
+  font-size: 15px;
+  color:rgba(0,0,0,.6);
+  margin-bottom: 20px;
 }
 
 #semi-structure .main-btn{
@@ -493,11 +501,9 @@
   padding-left: 60px;
   padding-right: 60px;
   background: #365e0f;
-  margin-top:20px;
   color:#FFF;
   text-decoration: none;
-  font-family: Oswald;
-  font-weight: 600;
+  border-radius: 30px;
 }
 
 #intersection{
@@ -508,7 +514,7 @@
 }
 
 #intersection .header-text{
-  font-family: Oswald;
+
   margin-bottom: 20px;
   text-transform: uppercase;
 }
@@ -517,9 +523,10 @@
   padding:13px;
   padding-left: 60px;
   padding-right: 60px;
-  background:#66c010;
-  color:#FFF;
+  background:#FFF;
+  color:#000;
   text-decoration:none;
+  border-radius: 30px;
 }
 
 #intersection .header-text{
@@ -535,14 +542,13 @@
 }
 
 #services #major-container{
-  min-height: 60vh;
   border-top:1px solid #66c010;
   border-bottom:1px solid #66c010;
   padding:20px;
 }
 
 #services .header-text{
-  font-family: Oswald;
+
   text-transform: uppercase;
   font-weight: bold;
   font-size:25px;
@@ -577,7 +583,7 @@
 #team .header-text{
   color:#FFF;
   padding-left: 30px;
-  font-family: Oswald;
+
   margin-top:19px;
 }
 
@@ -622,7 +628,7 @@
 #main-resources .main-text{
   margin-left: 30px;
   font-weight: bold;
-  font-family: Oswald;
+
   margin-top:20px;
   margin-bottom: 20px;
 }
@@ -642,11 +648,11 @@
 }
 
 #services{
-  padding:100px;
+  padding:20px;
 }
 
 #services #main-container{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 #services #main-container .main-link{
@@ -655,6 +661,7 @@
 
 #services #main-container #main-image{
   width:100%;
+  border-radius: 15px;
 }
 
 #services #main-container .header-text{
@@ -791,7 +798,7 @@
 }
 
 #pricing #text-container .price{
-  font-family: Oswald;
+
   font-size:45px;
 }
 
@@ -807,7 +814,7 @@
 }
 
 #faq{
-  padding:100px;
+  padding:30px;
 }
 
 /* Remove background color */
@@ -816,28 +823,26 @@
 }
 
 #faq .accordion-button {
-    background-color: transparent;
     font-size:15px;
 }
 
 /* Remove the border and outline */
 #faq .accordion-button {
-    border: none;
-    outline: none;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 /* Remove the background color and border on collapse */
 #faq .accordion-button:not(.collapsed) {
-    background-color: transparent;
-    border: none;
     color:#000;
+    background: #c3cfb7;
+    border-bottom: 1px solid #FFF;
 }
 
 /* Remove borders and background for the accordion body */
 #faq .accordion-body {
     background-color: transparent;
     border: none;
+    background: #c3cfb7;
 }
 
 /* Remove box-shadow and outline when focused or active */
@@ -852,7 +857,7 @@
 }
 
 #checkout .header-text{
-  font-family: Oswald;
+
 }
 
 #checkout .sub-text{
@@ -913,7 +918,7 @@
   font-size:12px;
   color:#FFF;
   font-weight: bold;
-  font-family: Oswald;
+
 }
 
 #checkout .main-link{
@@ -965,7 +970,11 @@
 }
 
 #contact-top #padding-main{
-  padding-top:100px;
+  padding-top:20px;
+}
+
+#contact-top .major-container{
+  border-radius: 30px;
 }
 
 #contact-top #main-container{
@@ -975,7 +984,7 @@
 
 #contact-top #main-container .header-text{
   color:#FFF;
-  font-family: Oswald;
+
   font-size: 45px;
 }
 
@@ -1022,7 +1031,7 @@
   margin-left: 15px;
   background: #66c010;
   color:#FFF;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 
 #contact-top .main-image{
@@ -1038,14 +1047,16 @@
 #contact-bottom #main-box{
   background: #FFF;
   padding:50px;
-  border-left: 20px solid #f0f0f0;
-  border-right: 20px solid #f0f0f0;
+  border-left: 10px solid #f0f0f0;
+  border-right: 10px solid #f0f0f0;
+  border-radius: 30px;
 }
 
 #contact-bottom .header-text{
   font-size:25px;
-  font-family: Oswald;
+
   margin-top:10px;
+  margin-bottom: 10px;
 }
 
 #contact-bottom #main-icon{
@@ -1067,7 +1078,7 @@
 #success-container .header-text{
   color:#FFF;
   text-transform: uppercase;
-  font-family: Oswald;
+
 }
 
 #success-container .sub-text{
@@ -1101,13 +1112,14 @@
 }
 
 #about-primary .header-text{
-  font-size:60px;
+  font-size:50px;
   font-weight: 600;
-  font-family: Oswald;
+  color:#66c010;
   margin:0px;
   padding:0px;
   margin-top:15px;
   margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 #about-primary .mini-text{
@@ -1130,13 +1142,12 @@
   margin-top:20px;
   color:#FFF;
   text-decoration: none;
-  font-family: Oswald;
-  font-weight: 600;
+  border-radius: 30px;
 }
 
 #about-primary .bold{
   font-weight: bold;
-  font-family: Oswald;
+
 }
 
 #about-primry .bullet-text{
@@ -1149,7 +1160,7 @@
 
 #about-secondary .header-text{
   font-size:30px;
-  font-family: Oswald;
+
   text-decoration:underline;
   margin-left: 50px;
 }
@@ -1181,17 +1192,32 @@
 #about-vision{
   background: #365e0f;
   color:#FFF;
-  padding:100px;
+  padding:30px;
+}
+
+#about-vision .major-text{
+  font-size:40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+#about-vision .par-text{
+  font-size: 18px;
 }
 
 #about-vision .header-text{
   font-size:29px;
   font-weight: bold;
-  font-family: Oswald;
+  margin-top:10px;
 }
 
 #about-vision #main-box{
-
+  background: rgba(255,255,255,.7);
+  border-left: 20px solid #365e0f;
+  padding:30px;
+  color:#000;
+  margin-bottom: 20px;
+  margin-top:20px;
 }
 
 #footer{
@@ -1208,7 +1234,7 @@
 
 #footer .header-text{
   font-size:20px;
-  font-family: Oswald;
+
 }
 
 #footer #main-icon{
@@ -1247,6 +1273,50 @@
   float:left;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+#contact-field{
+  padding:20px;
+}
+
+#contact-field #main-container{
+  background: #365e0f;
+  border-radius: 40px;
+  background: url("https://cdn.prod.website-files.com/68009d4aaf8d941819fcc401/685813492147ea7578a55f81_text-container.png");
+  background-size: cover;
+  background-position: center;
+}
+
+#contact-field #main-container #background-wrapper{
+  height: 100%;
+  width:100%;
+  border-radius: 40px;
+  padding:50px;
+  background: rgba(54, 94, 15,.7);
+}
+
+#contact-field .header-text{
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size:45px;
+  font-weight: bold;
+  color:#FFF;
+}
+
+#contact-field .main-btn{
+  padding:13px;
+  padding-left: 60px;
+  padding-right: 60px;
+  background:#FFF;
+  color:#000;
+  text-decoration:none;
+  border-radius: 30px;
+}
+
+#contact-field .sub-text{
+  font-size:17px;
+  width:60%;
+  color:#FFF;
 }
 
 
@@ -1295,8 +1365,21 @@
 
   #header #background-container .sub-text{
     font-size:17px;
-    width:80%;
+    width:90%;
   }
+
+  #about-vision{
+    padding:20px;
+  }
+
+  #faq{
+    padding:20px;
+  }
+
+  #faq .accordion-button{
+    font-size:15px;
+  }
+
 
   #header #background-container .main-btn{
     padding-left: 30px;
@@ -1316,6 +1399,16 @@
   #semi-header #main-container{
     padding:10px;
     padding-top:50px;
+    margin-bottom: 10px;
+  }
+
+  #semi-header .header{
+    font-size:30px;
+  }
+
+  #semi-structure .main-image{
+    height: 300px;
+    object-fit: cover;
   }
 
   #background-section{
@@ -1356,7 +1449,7 @@
   }
 
   #contact-top{
-    min-height: 200vh;
+    min-height: 70vh;
   }
 
   #contact-top #main-container{
@@ -1371,6 +1464,23 @@
     width:100%;
   }
 
+  #contact-bottom{
+    padding:10px;
+  }
+
+  #contact-bottom #main-box{
+    margin-bottom: 20px;
+  }
+
+  #intersection{
+    padding:20px;
+  }
+
+  #about-primary .main-image{
+    width:100%;
+    height: 300px;
+    object-fit: cover;
+  }
 
   #purchasing{
     padding:10px;
@@ -1382,5 +1492,13 @@
 
   #purchasing .icon-one{
     margin-top:15px;
+  }
+
+  #checkout-header .header-text{
+    font-size:25px;
+  }
+
+  #checkout{
+    padding:5px;
   }
 }

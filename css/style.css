@@ -296,6 +296,10 @@ body{
   margin-top:10px;
 }
 
+#semi-header #main-container .par-text{
+  text-align: justify;
+}
+
 #semi-header #background-container .sub-text{
   font-size:17px;
   width:60%;
@@ -461,6 +465,10 @@ body{
   color:#66c010;
 }
 
+#purchasing .sub-text{
+  text-align: justify;
+}
+
 #semi-structure{
 }
 
@@ -494,6 +502,7 @@ body{
   font-size: 15px;
   color:rgba(0,0,0,.6);
   margin-bottom: 20px;
+  text-align: justify;
 }
 
 #semi-structure .main-btn{
@@ -559,9 +568,10 @@ body{
   width:70%;
 }
 
-#services .main-image{
+#services #main-container #main-image{
   width:100%;
-  height: 500px;
+  height: 230px!important;
+  object-fit: cover;
 }
 
 #team{
@@ -1131,6 +1141,7 @@ body{
   width:90%;
   font-size: 16px;
   color:#556375;
+  text-align: justify;
   margin-bottom: 30px;
 }
 

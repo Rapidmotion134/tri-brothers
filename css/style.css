@@ -250,7 +250,7 @@ body{
 #header .main-btn,
 #header .contact-btn {
   display: inline-block;
-  padding: 16px 40px;
+  padding: 14px 60px;
   border-radius: 10px;
   text-decoration: none;
   font-size: 15px;
@@ -440,18 +440,18 @@ body{
 
 #background-section .wrapper{
   background: rgba(2,6,24,.9);
-  height: 70vh;
+  height: 80vh;
   color:#FFF;
   padding:90px;
-  padding-top:100px;
+  padding-top:120px;
 }
 
 #background-section .header-text{
   font-size: 60px;
   font-weight: bolder;
   line-height: 60px;
-  margin-top:20px;
-  margin-bottom: 20px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 #background-section .brand-text{
@@ -481,16 +481,18 @@ body{
 
 #compliance-section .wrapper{
   background: rgba(2,6,24,.9);
-  height: 60vh;
+  height: 70vh;
   color:#FFF;
   padding:90px;
-  padding-top:100px;
+  padding-top:130px;
 }
 
 #compliance-section .header-text{
   font-size: 60px;
   font-weight: bolder;
   line-height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #compliance-section .brand-text{
@@ -510,6 +512,7 @@ body{
   color:rgba(255,255,255,0.6);
 }
 
+
 #dispatch-section{
   background: url("../image/dispatch.jpg");
   background-position: bottom;
@@ -520,18 +523,18 @@ body{
 
 #dispatch-section .wrapper{
   background: rgba(2,6,24,.9);
-  height: 60vh;
+  height: 70vh;
   color:#FFF;
   padding:90px;
-  padding-top:100px;
+  padding-top:130px;
 }
 
 #dispatch-section .header-text{
   font-size: 60px;
   font-weight: bolder;
   line-height: 60px;
-  margin-top:20px;
-  margin-bottom: 20px;
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 
 #dispatch-section .brand-text{
@@ -564,15 +567,15 @@ body{
   height: 70vh;
   color:#FFF;
   padding:90px;
-  padding-bottom:100px;
+  padding-top:130px;
 }
 
 #accounting-section .header-text{
   font-size: 60px;
   font-weight: bolder;
   line-height: 60px;
-  margin-top:20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #accounting-section .brand-text{
@@ -602,18 +605,18 @@ body{
 
 #drugtesting-section .wrapper{
   background: rgba(2,6,24,.9);
-  height: 60vh;
+  height: 70vh;
   color:#FFF;
-  padding:50px;
-  padding-top:100px;
+  padding:90px;
+  padding-top:130px;
 }
 
 #drugtesting-section .header-text{
   font-size: 60px;
   font-weight: bolder;
   line-height: 60px;
-  margin-top:20px;
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #drugtesting-section .brand-text{
@@ -1087,7 +1090,7 @@ body{
 #key-section{
   background: #0f172b;
   padding:100px;
-  padding-top:150px;
+  padding-top:200px;
 }
 
 #key-section .header-text{
@@ -1097,6 +1100,10 @@ body{
 
 #key-section .sub-text{
   color:#FFF;
+}
+
+#main-paragraph{
+  padding:150px;
 }
 
 
@@ -1311,7 +1318,7 @@ body{
 }
 
 #faq{
-  padding:30px;
+  padding:50px;
 }
 
 /* Remove background color */
@@ -1330,8 +1337,8 @@ body{
 
 /* Remove the background color and border on collapse */
 #faq .accordion-button:not(.collapsed) {
-    color:#000;
-    background: #c3cfb7;
+    color:#FFF;
+    background: #15192a;
     border-bottom: 1px solid #FFF;
 }
 
@@ -1339,7 +1346,7 @@ body{
 #faq .accordion-body {
     background-color: transparent;
     border: none;
-    background: #c3cfb7;
+    background: #FFF;
 }
 
 /* Remove box-shadow and outline when focused or active */
@@ -1348,9 +1355,19 @@ body{
     outline: none;
 }
 
+#faq .accordion-button{
+  background: #f5f7fa;
+}
+
+#faq .major-text{
+  margin-bottom: 30px;
+}
+
+
 #checkout{
-  padding:60px;
-  background:#ececec;
+  padding:150px;
+  padding-bottom: 80px;
+  background:#f5f7fa;
 }
 
 #checkout .header-text{
@@ -1379,12 +1396,10 @@ body{
 }
 
 #checkout .top-text{
-  text-transform: uppercase;
+
 }
 
 #checkout #form-container{
-  padding:50px;
-  padding-right: 80px;
   padding-top:0px;
 }
 
@@ -1745,7 +1760,7 @@ body{
 #figures h3{
   margin:0px;
   color:#3d7d39;
-  font-size: 55px;
+  font-size: 45px;
   font-weight: bolder;
 }
 

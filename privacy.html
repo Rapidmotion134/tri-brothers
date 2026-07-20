@@ -23,62 +23,84 @@
   </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark" id="nav">
-    <center>
-      <div class="container-fluid">
 
-          <div class="row justify-content-center">
-            <div class="col-lg-10">
-              <div class="top-section">
-                <div class="social-wrapper">
-                  <a href="https://facebook.com/tribrothersusa/" class="social-links">
-                    <i class="bi bi-facebook"></i>
-                  </a>
-                  <a href="https://www.instagram.com/tribrothersusa/" class="social-links">
-                    <i class="bi bi-instagram"></i>
-                  </a>
-                </div>
-                <a href="signup.html" class="major-button">SIGN UP</a>
-                <a href="https://account-dev.tribrothersusa.com/" class="major-button" target=”_blank”>CLIENT LOGIN</a>
+          <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="nav">
 
-                <a href="#" class="join-button">
-                  <i class="bi bi-person-circle"></i> Join our Community
-                </a><br><br>
-              </div>
+          <div class="container-fluid">
 
+            <!-- BRAND -->
+            <a class="navbar-brand" href="index.html">
+              <img src="image/logo-white.png" class="nav-brand" alt="Logo">
+            </a>
 
-            </div>
+            <!-- TOGGLER -->
+            <button class="navbar-toggler" type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation">
 
-            <div class="col-lg-8">
-              <img src="image/logo.png" class="nav-brand">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                  <li class="nav-item">
-                      <a href="index.html" class="nav-link">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="services.html" class="nav-link">Services</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="about.html" class="nav-link">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="faq.html" class="nav-link">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="contact.html" class="nav-link">Contact</a>
-                  </li>
-                </ul>
+            </button>
+
+            <!-- COLLAPSE MENU -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+              <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+
+                <!-- SERVICES -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown"
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+                    <li><a class="dropdown-item" href="compliance.html">Compliance Management</a></li>
+                    <li><a class="dropdown-item" href="dispatch.html">Dispatching</a></li>
+                    <li><a class="dropdown-item" href="accounting.html">Accounting Management</a></li>
+                    <li><a class="dropdown-item" href="drug-testing.html">Drug Testing Consortium</a></li>
+                  </ul>
+                </li>
+
+                <!-- ABOUT -->
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown"
+                    role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    About Us
+                  </a>
+
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <li><a class="dropdown-item" href="about.html">Company Overview</a></li>
+                    <li><a class="dropdown-item" href="our-team.html">Our Team</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item">
+                  <a href="faq.html" class="nav-link">FAQ</a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="contact.html" class="nav-link">Contact</a>
+                </li>
+
+              </ul>
+
+              <!-- BUTTONS -->
+              <div class="d-flex">
+                <a href="signup.html" class="key-button">SIGN UP</a>
+                <a href="https://account.tribrothersusa.com/" class="major-button" target="_blank">CLIENT LOGIN</a>
               </div>
+
             </div>
+
           </div>
-    </div>
-  </center>
-  </nav>
+        </nav>
 
   <section id="main-paragraph">
     <div class="container">
@@ -171,40 +193,59 @@ Tri Brothers LLC does not sell, rent, or lease customer lists to third parties. 
     </div>
   </section>
 
-  <footer id="footer">
-    <div class="container-fluid">
-      <div class="row justify-content-center">
-        <div class="col-lg-3">
-          <p class="sub-text">Tel: (469) 908-1110</p>
-          <p class="sub-text">info@tribrothersusa.com</p>
-          <p class="sub-text">5125 W Oquendo Rd, Ste 8,<br> Las Vegas, NV 89118</p><br>
-          <p class="sub-text">&copy 2025 Tri Brothers LLC</p>
-        </div>
-
-        <div class="col-lg-3">
-          <center>
-            <a href="https://facebook.com/tribrothersusa/" class="social-icons">
-              <i class="bi bi-facebook"></i>
-            </a>
-            <a href="https://www.instagram.com/tribrothersusa/?hl=en" class="social-icons">
-              <i class="bi bi-instagram"></i>
+      <footer id="footer">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-3" id="main-container">
+              <img src="image/transparent-image.png" class="main-image">
+              <p class="pin-text">Tri Brothers LLC supports trucking businesses with reliable operational and administrative services designed to keep fleets moving efficiently.</p>
+              <a href="https://facebook.com/tribrothersusa/" class="social-icons">
+                <i class="bi bi-facebook"></i>
               </a>
-            <br>
-            <div class="link-container">
-              <center>
-                <a href="terms.html" class="main-link">Terms and conditions</a>
-                <a href="privacy.html" class="main-link">Privacy Policy</a>
-              </center>
-            </div>
-          </center>
-        </div>
+              <a href="https://www.instagram.com/tribrothersusa/?hl=en" class="social-icons">
+                <i class="bi bi-instagram"></i>
+              </a>
 
-        <div class="col-lg-3">
-          <a href="#nav" class="on-top">Back to top <i class="bi bi-arrow-up"></i></a>
+              <a href="https://www.tiktok.com/@drivenbyeyob" class="social-icons">
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </div>
+
+            <div class="col-lg-3">
+              <h3 class="header-text">Services</h3>
+              <a href="compliance.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Compliance Management</a>
+              <a href="dispatch.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Dispatching</a>
+              <a href="accounting.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Accounting Management</a>
+              <a href="drug-testing.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Drug Testing Consortium</a>
+            </div>
+
+
+            <div class="col-lg-3">
+              <h3 class="header-text">Navigation</h3>
+              <a href="index.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Home</a>
+              <a href="about.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> About Us</a>
+              <a href="our-team.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Our Team</a>
+              <a href="faq.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> FAQ</a>
+              <a href="contact.html" class="critical-link"><i class="bi bi-arrow-up-right" id="critical-icon"></i> Contact</a>
+            </div>
+
+            <div class="col-lg-3">
+              <h3 class="header-text">Contact Us</h3>
+              <p class="sub-text"><i class="bi bi-map" id="main-icon"></i> 5125 W Oquendo Rd, Ste 8, Las Vegas, NV 89118</p>
+              <p class="sub-text"><i class="bi bi-phone" id="main-icon"></i> Tel: (469) 908-1110</p>
+              <p class="sub-text"><i class="bi bi-envelope" id="main-icon"></i> info@tribrothersusa.com</p>
+            </div>
+          </div>
+          <hr>
+          <p class="copy-text">&copy 2026 TRI-BROTHERS LLC</p>
+            <a href="terms.html" class="right-link">Terms and conditions</a>
+            <a href="privacy.html" class="right-link">Privacy Policy</a>
+
         </div>
       </div>
-    </div>
-  </footer>
+
+      </footer>
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
